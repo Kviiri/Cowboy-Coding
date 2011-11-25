@@ -12,11 +12,14 @@ import java.util.ArrayList;
  * @author kviiri
  */
 public abstract class Ihminen extends Elain implements Ryostettava {
-    private String sukunimi;        //Elaimella on jo etunimi joten sukunimi riittää
     private ArrayList<Ase> aseet = new ArrayList<Ase>();
+    private String sukunimi;
+    private double kulta;
+    
     public Ihminen(boolean sukupuoli, String nimi, String sukunimi) {
         super(sukupuoli, nimi);
         this.sukunimi = sukunimi;
+        this.kulta = 0;
     }
     
     
@@ -34,7 +37,14 @@ public abstract class Ihminen extends Elain implements Ryostettava {
      */
     @Override
     public double ryosta(Ihminen ryostaja) {
-        return 0.0;
+        double maara = this.kulta;
+        this.kulta = 0;
+        return maara;
+    }
+    public double teeRyosto(Ryostettava kohde) {
+        double maara = kohde.ryosta(this);
+        this.kulta += maara;
+        return maara;
     }
     
 }
