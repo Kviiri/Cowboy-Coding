@@ -12,8 +12,8 @@ import java.util.ArrayList;
  */
 public class Alue extends IhmisSailio {
     ArrayList<Elain> elaimet = new ArrayList<Elain>();
-    ArrayList<IhmisSailio> sisaltavat = new ArrayList<IhmisSailio>();
-    ArrayList<Rakennus> rakennukset = new ArrayList<Rakennus>();
+    ArrayList<IhmisSailio> sisaltavat = new ArrayList<IhmisSailio>(); 
+    ArrayList<Rakennus> rakennukset = new ArrayList<Rakennus>(); 
     
     public void lisaaRakennus(Rakennus rakennus) {
         rakennukset.add(rakennus);
@@ -32,5 +32,13 @@ public class Alue extends IhmisSailio {
     }
     public void poistaSisaltava(IhmisSailio sisaltava) {
         sisaltavat.remove(sisaltava);
+    }
+    public String toString() {
+        return "Rakennuksia " + rakennukset.size() + "\nMuita ihmisiŠ sisŠltŠviŠ: " +
+                (sisaltavat.size() - rakennukset.size()) + "\nVapaita elŠimiŠ: " + 
+                elaimet.size();
+    }
+    public ArrayList<Rakennus> getRakennukset() {
+        return this.rakennukset;
     }
 }
