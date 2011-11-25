@@ -51,6 +51,8 @@ public abstract class Ihminen extends Elain implements Ryostettava {
         return maara;
     }
     public Ase parasAse() {
+        if (this.aseet.isEmpty())
+            return new Ase("Ei asetta", 0);
         return Collections.max(this.aseet);
     }
 }
