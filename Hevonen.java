@@ -7,6 +7,6 @@
  *
  * @author kviiri
  */
-public class Hevonen extends Elain {
+public class Hevonen extends Elain implements Ratsastettava {
     
 }

@@ -8,5 +8,6 @@
  * @author kviiri
  */
 public class Kaarme {
-    
+    public void pure(Elain e) {
+    }
 }

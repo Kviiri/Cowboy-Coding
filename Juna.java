@@ -7,6 +7,6 @@
  *
  * @author kviiri
  */
-public class Juna {
+public class Juna  {
     
 }

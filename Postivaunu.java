@@ -7,6 +7,6 @@
  *
  * @author kviiri
  */
-public class Postivaunu implements Ryostettava, Liikkuva {
+public class Postivaunu implements Ryostettava, Liikkuva, IhmisiaSisaltava {
     
 }
