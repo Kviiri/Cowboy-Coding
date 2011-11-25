@@ -17,8 +17,7 @@ public class Juna extends IhmisSailio implements Ryostettava, Liikkuva {
     public double ryosta(Ihminen ryostaja) {
         double summa = 0;
         for (Ihminen ihminen : super.ihmiset) {
-            summa += ihminen.getKulta();
-            ihminen.ryosta(ryostaja);
+            summa += ihminen.ryosta(ryostaja);
         }
         return summa;
     }

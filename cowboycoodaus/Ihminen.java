@@ -1,6 +1,7 @@
 package cowboycoodaus;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 /*
  * To change this template, choose Tools | Templates
@@ -37,6 +38,9 @@ public abstract class Ihminen extends Elain implements Ryostettava {
      */
     @Override
     public double ryosta(Ihminen ryostaja) {
+        if (this.parasAse().getTehokkuus() >= ryostaja.parasAse().getTehokkuus()) {
+            return 0;
+        }
         double maara = this.kulta;
         this.kulta = 0;
         return maara;
@@ -46,5 +50,7 @@ public abstract class Ihminen extends Elain implements Ryostettava {
         this.kulta += maara;
         return maara;
     }
-    
+    public Ase parasAse() {
+        return Collections.max(this.aseet);
+    }
 }
