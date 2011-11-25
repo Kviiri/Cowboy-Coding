@@ -10,9 +10,12 @@ package cowboycoodaus;
  */
 public abstract class Ihminen extends Elain implements Ryostettava {
     private String sukunimi;
+    private double kulta;
+    
     public Ihminen(boolean sukupuoli, String nimi, String sukunimi) {
         super(sukupuoli, nimi);
         this.sukunimi = sukunimi;
+        this.kulta = 0;
     }
     
     
@@ -30,7 +33,14 @@ public abstract class Ihminen extends Elain implements Ryostettava {
      */
     @Override
     public double ryosta(Ihminen ryostaja) {
-        return 0.0;
+        double maara = this.kulta;
+        this.kulta = 0;
+        return maara;
+    }
+    public double teeRyosto(Ryostettava kohde) {
+        double maara = kohde.ryosta(this);
+        this.kulta += maara;
+        return maara;
     }
     
 }

@@ -10,4 +10,6 @@ package cowboycoodaus;
  */
 public interface Ryostettava {
     public double ryosta(Ihminen ryostaja);
+    public double getKulta();
+    public void setKulta(double summa);
 }

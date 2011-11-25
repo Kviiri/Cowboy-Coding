@@ -27,5 +27,15 @@ public class Postivaunu extends IhmisSailio implements Ryostettava, Liikkuva {
     public int getNopeus() {
         throw new UnsupportedOperationException("Not supported yet.");
     }
+
+    @Override
+    public double getKulta() {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+
+    @Override
+    public void setKulta(double summa) {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
     
 }
