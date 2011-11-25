@@ -1,4 +1,7 @@
 package cowboycoodaus;
+
+import java.util.ArrayList;
+
 /*
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
@@ -9,7 +12,8 @@ package cowboycoodaus;
  * @author kviiri
  */
 public abstract class Ihminen extends Elain implements Ryostettava {
-    private String sukunimi;
+    private String sukunimi;        //Elaimella on jo etunimi joten sukunimi riittää
+    private ArrayList<Ase> aseet = new ArrayList<Ase>();
     public Ihminen(boolean sukupuoli, String nimi, String sukunimi) {
         super(sukupuoli, nimi);
         this.sukunimi = sukunimi;
