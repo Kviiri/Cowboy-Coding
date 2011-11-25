@@ -10,5 +10,5 @@ package cowboycoodaus;
  */
 public interface Ratsastettava {
     public void otaRatsaille(Ihminen ihminen);
-    public Ihminen getRatsastaja();
+    public Ihminen getRatsastaja() throws EiRatsastajaaException;
 }
