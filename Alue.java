@@ -33,4 +33,21 @@ public class Alue implements SisaltaaIhmisia {
     public void poistaSisaltava(SisaltaaIhmisia sisaltava) {
         sisaltavat.remove(sisaltava);
     }
+
+    
+
+    @Override
+    public void lisaaIhminen(Ihminen ihminen) {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+
+    @Override
+    public void poistaIhminen(Ihminen ihminen) {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+
+    @Override
+    public ArrayList<Ihminen> getIhmiset() {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
 }

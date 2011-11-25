@@ -1,8 +1,9 @@
+package cowboycoodaus;
 /*
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package cowboycoodaus;
+
 
 import java.util.ArrayList;
 
@@ -23,7 +24,7 @@ public abstract class Rakennus implements SisaltaaIhmisia{
     public void lisaaIhminen(Ihminen ihminen) {
         ihmiset.add(ihminen);
     }
-    public void getIhmiset() {
+    public ArrayList<Ihminen> getIhmiset() {
         return ihmiset;
     }
 }

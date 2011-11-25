@@ -1,3 +1,4 @@
+package cowboycoodaus;
 /*
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
@@ -13,7 +14,7 @@ public abstract class Ihminen extends Elain implements Ryostettava {
      * Siirtää ihmisen parametrina annettuun IhmisiaSisaltavaan
      * @param is 
      */
-    public void astu(IhmisiaSisaltava is) {
+    public void astu(SisaltaaIhmisia is) {
         throw new UnsupportedOperationException("Not supported yet.");
     }
     /**
@@ -23,7 +24,7 @@ public abstract class Ihminen extends Elain implements Ryostettava {
      */
     @Override
     public double ryosta(Ihminen ryostaja) {
-        
+        return 0.0;
     }
     
 }
