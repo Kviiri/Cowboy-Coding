@@ -9,15 +9,19 @@ package cowboycoodaus;
  * @author kviiri
  */
 public class Muuli extends Elain implements Ratsastettava {
-
+    Ihminen ratsastaja;
+    
+    public Muuli(boolean sukupuoli, String nimi) {
+        super(sukupuoli, nimi);
+    }
     @Override
     public void otaRatsaille(Ihminen ihminen) {
-        throw new UnsupportedOperationException("Not supported yet.");
+        this.ratsastaja = ihminen;
     }
 
     @Override
-    public void getRatsastaja() {
-        throw new UnsupportedOperationException("Not supported yet.");
+    public Ihminen getRatsastaja() {
+        return this.ratsastaja;
     }
     
 }
