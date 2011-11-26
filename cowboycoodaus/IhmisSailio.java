@@ -11,7 +11,8 @@ import java.util.ArrayList;
  * @author tonykovanen, kviiri
  */
 public abstract class IhmisSailio {
-    public ArrayList<Ihminen> ihmiset;
+    protected ArrayList<Ihminen> ihmiset;
+    protected Alue alue;
     
     public ArrayList<Ihminen> getIhmiset() {
         return ihmiset; 
@@ -24,5 +25,8 @@ public abstract class IhmisSailio {
     }
     public boolean onkoSailiossa(Ihminen ihminen) {
         return ihmiset.contains(ihminen);
+    }
+    public void setAlue(Alue alue) {
+        this.alue = alue;
     }
 }

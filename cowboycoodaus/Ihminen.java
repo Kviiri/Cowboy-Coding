@@ -55,4 +55,7 @@ public abstract class Ihminen extends Elain implements Ryostettava {
             return new Ase("Ei asetta", 0);
         return Collections.max(this.aseet);
     }
+    public int getNopeus() {
+        throw new UnsupportedOperationException("Ei tuettu vielä");
+    }
 }

@@ -10,8 +10,4 @@ package cowboycoodaus;
  */
 public class Tiipii extends Rakennus {
     
-    
-    public Tiipii(Alue alue) {
-        super(alue);
-    }
 }

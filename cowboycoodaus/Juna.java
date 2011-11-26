@@ -12,7 +12,7 @@ import java.util.ArrayList;
  * @author tonykovanen, kviiri
  */
 public class Juna extends IhmisSailio implements Ryostettava, Liikkuva {
-
+    
     @Override
     public double ryosta(Ihminen ryostaja) {
         double summa = 0;
@@ -24,7 +24,12 @@ public class Juna extends IhmisSailio implements Ryostettava, Liikkuva {
 
     @Override
     public void liiku(Alue kohde) {
-        throw new UnsupportedOperationException("Not supported yet.");
+        for (Ihminen ihminen : super.ihmiset) {
+            ihminen.setAlue(kohde);
+        }
+        super.alue.poistaSisaltava(this);
+        super.setAlue(kohde);
+        kohde.lisaaSisaltava(this);
     }
 
     @Override
@@ -34,12 +39,16 @@ public class Juna extends IhmisSailio implements Ryostettava, Liikkuva {
 
     @Override
     public double getKulta() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        int kultaa = 0;
+        for (Ihminen matkustaja : super.ihmiset) {
+            kultaa += matkustaja.getKulta();
+        }
+        return kultaa;
     }
 
     @Override
     public void setKulta(double summa) {
-        throw new UnsupportedOperationException("Not supported yet.");
+        return;
     }
     
 }

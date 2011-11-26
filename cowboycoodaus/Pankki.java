@@ -11,10 +11,11 @@ import java.util.ArrayList;
  * @author tonykovanen
  */
 public class Pankki extends Rakennus {
-    ArrayList<Ihminen> Vartijat;
+    private double kulta;
+    private ArrayList<Ihminen> Vartijat;
     
-    public Pankki(Alue alue) {
-        super(alue);
+    public Pankki(double kulta) {
+        this.kulta = kulta;
     }
     
 }

@@ -1,6 +1,7 @@
 package cowboycoodaus;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 /*
  * To change this template, choose Tools | Templates
@@ -12,10 +13,16 @@ import java.util.ArrayList;
  * @author kviiri
  */
 public class Postivaunu extends IhmisSailio implements Ryostettava, Liikkuva {
-
+    private double kulta;
+    
+    public Postivaunu(double kulta) {
+        this.kulta = kulta;
+    }
     @Override
     public double ryosta(Ihminen ryostaja) {
-        throw new UnsupportedOperationException("Not supported yet.");
+        double maara = this.kulta;
+        this.kulta = 0;
+        return maara;
     }
 
     @Override
@@ -30,12 +37,12 @@ public class Postivaunu extends IhmisSailio implements Ryostettava, Liikkuva {
 
     @Override
     public double getKulta() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        return this.kulta;
     }
 
     @Override
     public void setKulta(double summa) {
-        throw new UnsupportedOperationException("Not supported yet.");
+        this.kulta = summa;
     }
     
 }

@@ -8,7 +8,23 @@ package cowboycoodaus;
  *
  * @author kviiri
  */
-public class Kaarme {
+public class Kaarme extends Elain{
+    
+    public Kaarme(boolean sukupuoli, String nimi) {
+        super(sukupuoli, nimi);
+    }
+    
     public void pure(Elain e) {
+        System.out.println(e.kiroa());
+    }
+
+    @Override
+    public String kiroa() {
+        return "Hiss!";
+    }
+
+    @Override
+    public int getNopeus() {
+        throw new UnsupportedOperationException("Not supported yet.");
     }
 }

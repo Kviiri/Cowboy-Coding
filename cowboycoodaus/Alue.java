@@ -19,6 +19,7 @@ public class Alue extends IhmisSailio {
         rakennukset.add(rakennus);
     } 
     public void lisaaElain(Elain elain) {
+        elain.setAlue(this);
         elaimet.add(elain);
     }
     public void lisaaSisaltava(IhmisSailio sisaltava) {
