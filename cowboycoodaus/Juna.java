@@ -13,6 +13,17 @@ import java.util.ArrayList;
  */
 public class Juna extends IhmisSailio implements Ryostettava, Liikkuva {
     
+    private String nimi;
+    private int nopeus;
+    private double omaKulta;        //Kulta joka on junassa mutta ei matkustajilla
+    private int liikkumisAikaaJaljella;     //Kuinka monta "tickiä" juna liikkuu vielä
+    public Juna(String nimi, int nopeus, int omaKulta) {
+        this.nimi = nimi;
+        this.nopeus = nopeus;
+        this.omaKulta = omaKulta;
+        liikkumisAikaaJaljella = 0;
+    }
+    
     @Override
     public double ryosta(Ihminen ryostaja) {
         double summa = 0;
@@ -30,16 +41,17 @@ public class Juna extends IhmisSailio implements Ryostettava, Liikkuva {
         super.alue.poistaSisaltava(this);
         super.setAlue(kohde);
         kohde.lisaaSisaltava(this);
+        liikkumisAikaaJaljella = (int)Math.ceil(300.0 / getNopeus());
     }
 
     @Override
     public int getNopeus() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        return nopeus;
     }
 
     @Override
     public double getKulta() {
-        int kultaa = 0;
+        double kultaa = omaKulta;
         for (Ihminen matkustaja : super.ihmiset) {
             kultaa += matkustaja.getKulta();
         }
@@ -48,7 +60,7 @@ public class Juna extends IhmisSailio implements Ryostettava, Liikkuva {
 
     @Override
     public void setKulta(double summa) {
-        return;
+        omaKulta = summa;
     }
     
 }

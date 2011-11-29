@@ -27,6 +27,7 @@ public abstract class Elain implements Liikkuva{
     public void setAlue(Alue alue) {
         this.alue = alue;
     }
+    @Override
     public void liiku(Alue alue) {
         this.alue.poistaElain(this);
         alue.lisaaElain(this);
