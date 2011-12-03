@@ -15,6 +15,8 @@ public class Kaarme extends Elain{
     }
     
     public void pure(Elain e) {
+        System.out.println("HISS!");
+        System.out.println("*puree*");
         System.out.println(e.kiroa());
     }
 
