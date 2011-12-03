@@ -39,7 +39,6 @@ public class Juna extends IhmisSailio implements Ryostettava, Liikkuva {
             ihminen.setAlue(kohde);
         }
         super.alue.poistaSisaltava(this);
-        super.setAlue(kohde);
         kohde.lisaaSisaltava(this);
         liikkumisAikaaJaljella = (int)Math.ceil(300.0 / getNopeus());
     }

@@ -22,7 +22,10 @@ public class Muuli extends Elain implements Ratsastettava {
     }
 
     @Override
-    public Ihminen getRatsastaja() {
+    public Ihminen getRatsastaja() throws EiRatsastajaaException {
+        if (this.ratsastaja == null) {
+            throw new EiRatsastajaaException("lol");
+        }
         return this.ratsastaja;
 }
 
@@ -34,5 +37,12 @@ public class Muuli extends Elain implements Ratsastettava {
     @Override
     public String kiroa() {
         return "Ihahaa!";
+    }
+    @Override
+    public void liiku(Alue alue) {
+        if (this.ratsastaja != null) {
+            super.liiku(alue);
+            this.ratsastaja.liiku(alue);
+        }
     }
 }

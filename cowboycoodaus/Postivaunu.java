@@ -27,7 +27,11 @@ public class Postivaunu extends IhmisSailio implements Ryostettava, Liikkuva {
 
     @Override
     public void liiku(Alue kohde) {
-        throw new UnsupportedOperationException("Not supported yet.");
+        for (Ihminen ihminen : super.ihmiset) {
+            ihminen.setAlue(kohde);
+        }
+        super.alue.poistaSisaltava(this);
+        kohde.lisaaSisaltava(this);
     }
 
     @Override

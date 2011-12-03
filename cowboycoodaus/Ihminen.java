@@ -28,8 +28,22 @@ public abstract class Ihminen extends Elain implements Ryostettava {
      * Siirt채채 ihmisen parametrina annettuun IhmisiaSisaltavaan
      * @param is 
      */
-    public void astu(IhmisSailio is) {
+    public void astuSisaan(IhmisSailio is) {
         is.lisaaIhminen(this);
+    }
+    /*
+     * Siirt뒍 ihmisen ulos IhmisiSailiosta
+     * @param is
+     */
+    public void astuUlos(IhmisSailio is) {
+        is.poistaIhminen(this);
+    }
+    /*
+     * Ihminen nousee ratsaille
+     * @param hevonen hevonen jonka ratsaille ihminen nousee
+     */
+    public void nouseRatsaille(Hevonen hevonen) {
+        hevonen.otaRatsaille(this);
     }
     /**
      * Parametrin채 annettu Ihminen ry철st채채 t채m채n ihmisen

@@ -13,8 +13,9 @@ public class Tiipii extends Rakennus {
      * @param korkeus Tiipiin korkeus. Jos korkeus on negatiivinen, käytetään itseisarvoa
      */
     public Tiipii(double sade, double korkeus) {
-        this.sade = Math.abs(sade);
-        this.korkeus = Math.abs(korkeus);
+        super(sade, korkeus, 0);
+        this.sade = sade;
+        this.korkeus = korkeus;
     }
     /**
      * Laskee tiipiin tilavuuden (käytä apuna pohjaPintaAla - metodia!)
@@ -35,8 +36,9 @@ public class Tiipii extends Rakennus {
      * @param sadeLaajennos Säteen muutos (jos negatiivinen, ei muutosta)
      * @param korkeusLaajennos Korkeuden muutos (jos negatiivinen, ei muutosta)
      */
-    public void laajenna(double sadeLaajennos, double korkeusLaajennos) {
-        sade += Math.max(sadeLaajennos, 0);
-        korkeus += Math.max(korkeusLaajennos, 0);
+    
+    @Override
+    public void laajenna(double sadeLaajennos, double korkeusLaajennos, double syvyys) {
+        super.laajenna(sadeLaajennos, korkeusLaajennos, 0);
     }
 }

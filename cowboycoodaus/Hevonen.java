@@ -22,6 +22,9 @@ public class Hevonen extends Elain implements Ratsastettava {
 
     @Override
     public Ihminen getRatsastaja() throws EiRatsastajaaException {
+        if (this.ratsastaja == null) {
+            throw new EiRatsastajaaException("lol");
+        }
         return this.ratsastaja;
     }
 
@@ -34,5 +37,11 @@ public class Hevonen extends Elain implements Ratsastettava {
     public String kiroa() {
         return "Ihahaa!";
     }
-    
+    @Override
+    public void liiku(Alue alue) {
+        if (this.ratsastaja != null) {
+            super.liiku(alue);
+            this.ratsastaja.liiku(alue);
+        }
+    }
 }

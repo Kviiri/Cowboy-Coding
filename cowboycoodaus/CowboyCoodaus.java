@@ -14,6 +14,12 @@ public class CowboyCoodaus {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        Hevonen heppa = new Hevonen(true, "Heppa");
+        try {
+            Ihminen immeinen = heppa.getRatsastaja();
+            System.out.println(immeinen);
+        } catch (EiRatsastajaaException e) {
+            System.out.println("Ei ratsastajaa!");
+        }
     }
 }

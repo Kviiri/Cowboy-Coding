@@ -14,8 +14,8 @@ public class Pankki extends Rakennus {
     private double kulta;
     private ArrayList<Ihminen> Vartijat;
     
-    public Pankki(double kulta) {
+    public Pankki(double kulta, double leveys, double korkeus, double syvyys) {
+        super(leveys, korkeus, syvyys);
         this.kulta = kulta;
     }
-    
 }
