@@ -11,6 +11,11 @@ package cowboycoodaus;
 public class Ase implements Comparable<Ase>{
     public String nimi;
     public int tehokkuus;
+    /**
+     * Aseella on nimi ja tehokkuus
+     * @param nimi aseen nimi
+     * @param tehokkuus aseen tehokkuus
+     */
     public Ase(String nimi, int tehokkuus) {
         this.nimi = nimi;
         this.tehokkuus = tehokkuus;
@@ -24,9 +29,17 @@ public class Ase implements Comparable<Ase>{
     public int compareTo(Ase t) {
         return this.getTehokkuus() - t.getTehokkuus();
     }
+    /**
+     * 
+     * @return palauttaa tehokkuuden
+     */
     public int getTehokkuus() {
         return this.tehokkuus;
     }
+    /**
+     * 
+     * @return palauttaa nimen
+     */
     public String getNimi() {
         return this.nimi;
     }

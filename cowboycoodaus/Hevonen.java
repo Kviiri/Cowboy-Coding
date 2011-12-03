@@ -11,6 +11,11 @@ package cowboycoodaus;
 public class Hevonen extends Elain implements Ratsastettava {
     private Ihminen ratsastaja;
     
+    /**
+     * 
+     * @param sukupuoli
+     * @param nimi 
+     */
     public Hevonen(boolean sukupuoli, String nimi) {
         super(sukupuoli, nimi);
     }
