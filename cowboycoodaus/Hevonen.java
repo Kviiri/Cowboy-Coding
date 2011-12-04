@@ -1,4 +1,8 @@
 package cowboycoodaus;
+
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /*
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
@@ -41,14 +45,6 @@ public class Hevonen extends Elain implements Ratsastettava {
     }
     /**
      * 
-     * @return palauttaa hevosen nopeuden
-     */
-    @Override
-    public int getNopeus() {
-        throw new UnsupportedOperationException("Not supported yet.");
-    }
-    /**
-     * 
      * @return hevonen kiroaa "Ihahaa!"
      */
     @Override
@@ -66,6 +62,13 @@ public class Hevonen extends Elain implements Ratsastettava {
             this.ratsastaja.liiku(alue);
         } else {
             super.liiku(alue);
+        }
+        try {
+            System.out.println("Liikkuu...");
+            Thread.sleep(1000 * 60 / super.getNopeus());
+            System.out.println("Perillä.");
+        } catch (InterruptedException ex) {
+            Logger.getLogger(Hevonen.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 }

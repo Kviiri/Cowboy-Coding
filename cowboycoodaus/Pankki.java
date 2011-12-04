@@ -8,7 +8,7 @@ import java.util.ArrayList;
  */
 public class Pankki extends Rakennus implements Ryostettava{
     private double kulta;
-    private ArrayList<Ihminen> vartijat;
+    private ArrayList<Ihminen> vartijat = new ArrayList<Ihminen>();
     /**
      * Luo uuden pankin. Käytä Rakennus-luokan konstruktoria avuksesi.
      * @param kulta Pankin kultavarasto

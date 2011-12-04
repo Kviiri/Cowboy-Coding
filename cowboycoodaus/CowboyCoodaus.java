@@ -13,20 +13,25 @@ public class CowboyCoodaus {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
-//        Hevonen heppa = new Hevonen(true, "Heppa");
-//        try {
-//            Ihminen immeinen = heppa.getRatsastaja();
-//            System.out.println(immeinen);
-//        } catch (EiRatsastajaaException e) {
-//            System.out.println("Ei ratsastajaa!");
-//        }
-        Postivaunu vaunu = new Postivaunu(100);
-        vaunu.lisaaIhminen(new Meksikaani(true, "Mulkku", "Mulkkersson"));
-        Alue alue = new Alue();
-        alue.lisaaSisaltava(vaunu);
-        Alue toinen = new Alue();
-        vaunu.liiku(toinen);
-        
+    public static void main(String[] args) throws EiRatsastajaaException {
+        Hevonen heppa = new Hevonen(true, "Heppa");
+        heppa.otaRatsaille(new Meksikaani(true, "Macho", "Luukkandez", new Rooli("Yliopistonlehtori")));
+        Alue eka = new Alue();
+        Alue toka = new Alue();
+        try {
+            System.out.println(heppa.getRatsastaja());
+            heppa.getRatsastaja().annaAse(new Ase("Pistooli", 15));
+            heppa.getRatsastaja().setAlue(eka);
+            heppa.setAlue(eka);
+            heppa.liiku(toka);
+        } catch (EiRatsastajaaException e) {
+            System.out.println("Ei ratsastajaa!");
+        }
+        Pankki pankki = new Pankki(100, 20, 20, 20);
+        Meksikaani vartija = new Meksikaani(true, "Thug", "Bodyguardson", new Rooli("Vartija"));
+        vartija.annaAse(new Ase("Puunuija", 3));
+        pankki.lisaaVartija(vartija);
+        heppa.getRatsastaja().teeRyosto(pankki);
+        System.out.println(heppa.getRatsastaja());
     }
 }

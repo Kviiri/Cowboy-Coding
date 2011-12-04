@@ -74,4 +74,7 @@ public abstract class Elain implements Liikkuva{
     public void setNopeus(int nopeus) {
         this.nopeus = nopeus;
     }
+    public int getNopeus() {
+        return this.nopeus;
+    }
 }
