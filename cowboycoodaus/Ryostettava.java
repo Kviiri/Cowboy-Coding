@@ -16,7 +16,7 @@ public interface Ryostettava {
      */
     public double ryosta(Ihminen ryostaja);
     /**
-     * Palauttaa Ryostettavan kultamäärän
+     * Palauttaa Ryostettavalla olevan kultamäärän
      * @return kultamäärä
      */
     public double getKulta();

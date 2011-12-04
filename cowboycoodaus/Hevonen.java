@@ -6,7 +6,7 @@ package cowboycoodaus;
 
 /**
  *
- * @author kviiri
+ * @author kviiri, tonykovanen
  */
 public class Hevonen extends Elain implements Ratsastettava {
     private Ihminen ratsastaja;
@@ -19,12 +19,19 @@ public class Hevonen extends Elain implements Ratsastettava {
     public Hevonen(boolean sukupuoli, String nimi) {
         super(sukupuoli, nimi);
     }
-    
+    /**
+     * Hevosella voi olla ratsastaja
+     * @param ihminen ihminen josta tulee ratsastaja
+     */
     @Override
     public void otaRatsaille(Ihminen ihminen) {
         this.ratsastaja = ihminen;
     }
-
+    /**
+     * 
+     * @return palauttaa ratsastajan
+     * @throws EiRatsastajaaException jos ratsastajaa ei ole niin heitettŠŠn poikkeus
+     */
     @Override
     public Ihminen getRatsastaja() throws EiRatsastajaaException {
         if (this.ratsastaja == null) {
@@ -32,21 +39,33 @@ public class Hevonen extends Elain implements Ratsastettava {
         }
         return this.ratsastaja;
     }
-
+    /**
+     * 
+     * @return palauttaa hevosen nopeuden
+     */
     @Override
     public int getNopeus() {
         throw new UnsupportedOperationException("Not supported yet.");
     }
-
+    /**
+     * 
+     * @return hevonen kiroaa "Ihahaa!"
+     */
     @Override
     public String kiroa() {
         return "Ihahaa!";
     }
+    /**
+     * Jos hevosella on ratsastaja niin molemmat liikkuvat, muuten vain hevonen liikkuu
+     * @param alue alue johon liikutaan
+     */
     @Override
     public void liiku(Alue alue) {
         if (this.ratsastaja != null) {
             super.liiku(alue);
             this.ratsastaja.liiku(alue);
+        } else {
+            super.liiku(alue);
         }
     }
 }

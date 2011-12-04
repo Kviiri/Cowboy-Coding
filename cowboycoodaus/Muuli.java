@@ -29,7 +29,7 @@ public class Muuli extends Elain implements Ratsastettava {
     /**
      * Palauttaa muulilla ratsastavan ihmisen.
      * @return
-     * @throws EiRatsastajaaException 
+     * @throws EiRatsastajaaException jos ei ole ratsastajaa
      */
     @Override
     public Ihminen getRatsastaja() throws EiRatsastajaaException {

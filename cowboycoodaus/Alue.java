@@ -7,12 +7,12 @@ package cowboycoodaus;
 import java.util.ArrayList;
 
 /**
- *
+ * Sisältää eläimiä, rakennuksia ja muita sisältäviä
  * @author tonykovanen, kviiri
  */
 
 /*
- * Sisältää ihmisiä
+ * 
  * 
  */
 public class Alue extends IhmisSailio {
