@@ -16,29 +16,34 @@ public abstract class Ihminen extends Elain implements Ryostettava {
     private ArrayList<Ase> aseet = new ArrayList<Ase>();
     private String sukunimi;
     private double kulta;
+    private Rooli rooli;
     
-    public Ihminen(boolean sukupuoli, String nimi, String sukunimi) {
+    public Ihminen(boolean sukupuoli, String nimi, String sukunimi, Rooli rooli) {
         super(sukupuoli, nimi);
         this.sukunimi = sukunimi;
         this.kulta = 0;
+        this.rooli = rooli;
+    }
+    public Ihminen(boolean sukupuoli, String nimi, String sukunimi) {
+        this(sukupuoli, nimi, sukunimi, new Rooli(sukupuoli ? "Herra" : "Rouva"));
     }
     
     
     /**
-     * Siirtää ihmisen parametrina annettuun IhmisiaSisaltavaan
+     * Siirtää ihmisen parametrina annettuun IhmisSailioon
      * @param is 
      */
     public void astuSisaan(IhmisSailio is) {
         is.lisaaIhminen(this);
     }
-    /*
-     * Siirt�� ihmisen ulos IhmisiSailiosta
+    /**
+     * Siirtää ihmisen ulos IhmisiSailiosta
      * @param is
      */
     public void astuUlos(IhmisSailio is) {
         is.poistaIhminen(this);
     }
-    /*
+    /**
      * Ihminen nousee ratsaille
      * @param hevonen hevonen jonka ratsaille ihminen nousee
      */
@@ -46,9 +51,9 @@ public abstract class Ihminen extends Elain implements Ryostettava {
         hevonen.otaRatsaille(this);
     }
     /**
-     * Parametrinä annettu Ihminen ryöstää tämän ihmisen
+     * Parametrinä annettu Ihminen ryöstää tämän ihmisen. Ryöstön onnistuminen riippuu ihmisten aseiden tehosta.
      * @param ryostaja
-     * @return double: saaliin määrä
+     * @return double: saaliin määrä (0 jos ryöstäjän ase ei ole tehokkaampi kuin Ryöstettävän ase, muulloin koko Ryöstettävän omaisuus)
      */
     @Override
     public double ryosta(Ihminen ryostaja) {
@@ -59,17 +64,37 @@ public abstract class Ihminen extends Elain implements Ryostettava {
         this.kulta = 0;
         return maara;
     }
+    /**
+     * Ryöstää kohteeksi annetun ryöstettävän.
+     * @param kohde
+     * @return 
+     */
     public double teeRyosto(Ryostettava kohde) {
         double maara = kohde.ryosta(this);
         this.kulta += maara;
         return maara;
     }
+    /**
+     * 
+     * @return tehokkain ase joka Ihmisellä on
+     */
     public Ase parasAse() {
         if (this.aseet.isEmpty())
             return new Ase("Ei asetta", 0);
         return Collections.max(this.aseet);
     }
+    /**
+     * Antaa ihmiselle uuden aseen
+     * @param a ase joka annetaan
+     */
+    public void annaAse(Ase a) {
+        aseet.add(a);
+    }
+    /**
+     * Palauttaa ihmisen liikkumisnopeuden.
+     * @return liikkumisnopeus
+     */
     public int getNopeus() {
-        throw new UnsupportedOperationException("Ei tuettu viel�");
+        throw new UnsupportedOperationException("Ei tuettu vielä");
     }
 }
