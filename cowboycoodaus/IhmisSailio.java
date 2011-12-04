@@ -11,7 +11,7 @@ import java.util.ArrayList;
  * @author tonykovanen, kviiri
  */
 public abstract class IhmisSailio {
-    protected ArrayList<Ihminen> ihmiset;
+    protected ArrayList<Ihminen> ihmiset = new ArrayList<Ihminen>();
     protected Alue alue;
     /**
      * 
@@ -25,7 +25,7 @@ public abstract class IhmisSailio {
      * @param ihminen lisättävä ihminen
      */
     public void lisaaIhminen(Ihminen ihminen) {
-        ihmiset.add(ihminen);
+        this.ihmiset.add(ihminen);
     }
     /**
      * Poistaa ihmisen IhmisiaSisaltavasta

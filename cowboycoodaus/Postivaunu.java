@@ -2,6 +2,8 @@ package cowboycoodaus;
 
 import java.util.ArrayList;
 import java.util.Random;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 
 /**
@@ -10,6 +12,7 @@ import java.util.Random;
  */
 public class Postivaunu extends IhmisSailio implements Ryostettava, Liikkuva {
     private double kulta;
+    private int nopeus = 5;
     /**
      * Luo uuden postivaunun
      * @param kulta postivaunun kultasisältö
@@ -39,6 +42,13 @@ public class Postivaunu extends IhmisSailio implements Ryostettava, Liikkuva {
         }
         super.alue.poistaSisaltava(this);
         kohde.lisaaSisaltava(this);
+        try {
+            System.out.println("Liikkuu...");
+            Thread.sleep((60 / nopeus) * 1000);
+            System.out.println("Liikkunut.");
+        } catch (InterruptedException ex) {
+            Logger.getLogger(Postivaunu.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
     /**
      * Palauttaa postivaunun nopeuden.
@@ -46,7 +56,7 @@ public class Postivaunu extends IhmisSailio implements Ryostettava, Liikkuva {
      */
     @Override
     public int getNopeus() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        return this.nopeus;
     }
     /**
      * Palauttaa postivaunun kultasisällön.
@@ -63,6 +73,14 @@ public class Postivaunu extends IhmisSailio implements Ryostettava, Liikkuva {
     @Override
     public void setKulta(double summa) {
         this.kulta = summa;
+    }
+    /**
+     * Postivaunulle voidaan asettaa nopeus, se on oletukselta 5 km / h
+     * @param nopeus asetettava nopeus 
+     */
+    @Override
+    public void setNopeus(int nopeus) {
+        this.nopeus = nopeus;
     }
     
 }
