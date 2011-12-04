@@ -67,4 +67,5 @@ public class Kojootti extends Elain implements Ratsastettava {
             super.liiku(alue);
         }
     }
+
 }

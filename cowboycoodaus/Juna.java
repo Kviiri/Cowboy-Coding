@@ -12,9 +12,8 @@ import java.util.ArrayList;
  * @author tonykovanen, kviiri
  */
 public class Juna extends IhmisSailio implements Ryostettava, Liikkuva {
-    
     private String malli;
-    private int nopeus;
+    private int nopeus = 60;
     private double omaKulta;        //Kulta joka on junassa mutta ei matkustajilla
     /**
      * Junalla on malli ja oma kultamäärä
@@ -78,6 +77,14 @@ public class Juna extends IhmisSailio implements Ryostettava, Liikkuva {
     @Override
     public void setKulta(double summa) {
         omaKulta = summa;
+    }
+    /**
+     * Junalle voidaan settaa nopeus, se on vakiolta 60 km / h
+     * @param nopeus 
+     */
+    @Override
+    public void setNopeus(int nopeus) {
+        this.nopeus = nopeus;
     }
     
 }

@@ -12,6 +12,7 @@ public abstract class Elain implements Liikkuva{
     private boolean sukupuoli;      //true on uros, false on naaras
     private String nimi;
     private Alue alue;
+    private int nopeus = 10;
     
     /**
      * Eläimelle annetaan sukupuoli nimi
@@ -57,4 +58,11 @@ public abstract class Elain implements Liikkuva{
      * @return palauttaa kiroilun string muodossa
      */
     public abstract String kiroa();
+    /**
+     * Eläimenne voidaan asettaa nopeus, se on vakiolta 10 km / h
+     * @param nopeus asetettava nopeus
+     */
+    public void setNopeus(int nopeus) {
+        this.nopeus = nopeus;
+    }
 }
