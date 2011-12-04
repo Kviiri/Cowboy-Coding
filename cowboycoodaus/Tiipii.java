@@ -1,44 +1,46 @@
 package cowboycoodaus;
 
 /**
- * Tiipii on ympyräkartion muotoinen intiaanimaja.
+ * Tiipii on ympyräkartion muotoinen intiaanimaja. Tiipiin leveys ja syvyys ovat aina yhtäsuuret.
  * @author kviiri, tonykovanen
  */
 public class Tiipii extends Rakennus {
-    private double sade;
-    private double korkeus;
     /**
      * Luo uuden tiipiin.
      * @param sade Tiipiin pohjaympyrän säde. Jos sade on negatiivinen, käytetään itseisarvoa
      * @param korkeus Tiipiin korkeus. Jos korkeus on negatiivinen, käytetään itseisarvoa
      */
     public Tiipii(double sade, double korkeus) {
-        super(sade, korkeus, 0);
-        this.sade = sade;
-        this.korkeus = korkeus;
+        super(sade, korkeus, sade);
     }
     /**
      * Laskee tiipiin tilavuuden (käytä apuna pohjaPintaAla - metodia!)
      * @return tilavuus
      */
     public double tilavuus() {
-        return (pohjaPintaAla() * korkeus) / 3;
+        return (pohjaPintaAla() * super.getKorkeus()) / 3;
     }
     /**
-     * Laskee tiipiin pohjapinta-alan.
-     * @return Tiipiin pohjapinta-ala
+     * Palauttaa lattiaympyrän säteen.
+     * @return lattiaympyrän säde
+     */
+    public double getSade() {
+        return getLeveys();
+    }
+    /**
+     * Laskee Tiipiin pohjan pinta-alan. Pohja on ympyrän muotoinen.
+     * @return Tiipiin lattiapinta-ala
      */
     public double pohjaPintaAla() {
-        return (2 * Math.PI * sade);
+        return (2 * Math.PI * getLeveys());
     }
+
     /**
-     * Laajentaa tiipiitä.
-     * @param sadeLaajennos Säteen muutos (jos negatiivinen, ei muutosta)
-     * @param korkeusLaajennos Korkeuden muutos (jos negatiivinen, ei muutosta)
+     * Laajentaa Tiipiitä. Käytä yliluokan laajenna-metodia avuksesi. 
+     * @param sadeLaajennos Syvyyteen ja Leveyteen tehtävä muutos.
+     * @param korkeusLaajennos Korkeuteen tehtävä muutos.
      */
-    
-    @Override
-    public void laajenna(double sadeLaajennos, double korkeusLaajennos, double syvyys) {
-        super.laajenna(sadeLaajennos, korkeusLaajennos, 0);
+    public void laajenna(double sadeLaajennos, double korkeusLaajennos) {
+        super.laajenna(sadeLaajennos, korkeusLaajennos, sadeLaajennos);
     }
 }
