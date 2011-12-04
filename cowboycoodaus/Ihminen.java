@@ -10,7 +10,7 @@ import java.util.Collections;
 
 /**
  *
- * @author kviiri
+ * @author tonykovanen, kviiri
  */
 public abstract class Ihminen extends Elain implements Ryostettava {
     private ArrayList<Ase> aseet = new ArrayList<Ase>();
@@ -96,5 +96,21 @@ public abstract class Ihminen extends Elain implements Ryostettava {
      */
     public int getNopeus() {
         throw new UnsupportedOperationException("Ei tuettu vielä");
+    }
+    /**
+     * Palauttaa Ihmisen kultamäärän.
+     * @return kulta
+     */
+    @Override
+    public double getKulta() {
+        return this.kulta;
+    }
+    /**
+     * Asettaa Ihmisen kultamäärän
+     * @param summa uusi kultamäärä
+     */
+    @Override
+    public void setKulta(double summa) {
+        this.kulta = summa;
     }
 }

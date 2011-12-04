@@ -25,6 +25,10 @@ public class Meksikaani extends Ihminen{
     public Meksikaani(boolean sukupuoli, String nimi, String sukunimi) {
         super(sukupuoli, nimi, sukunimi, new Rooli(sukupuoli ? "Señor" : "Señora"));
     }
+    /**
+     * Kiroaa.
+     * @return "Ai caramba!"
+     */
     @Override
     public String kiroa() {
         return "Ai caramba!";
