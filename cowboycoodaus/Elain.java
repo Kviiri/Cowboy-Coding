@@ -6,7 +6,7 @@ package cowboycoodaus;
 
 /**
  *
- * @author kviiri
+ * @author kviiri, tonykovanen
  */
 public abstract class Elain implements Liikkuva{
     private boolean sukupuoli;      //true on uros, false on naaras

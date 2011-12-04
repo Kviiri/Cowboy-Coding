@@ -5,7 +5,7 @@
 package cowboycoodaus;
 
 /**
- *
+ * 
  * @author tonykovanen, kviiri
  */
 public class Ase implements Comparable<Ase>{
@@ -24,7 +24,12 @@ public class Ase implements Comparable<Ase>{
     public String toString() {
         return nimi + "(" + tehokkuus + ")";
     }
-
+    /**
+     * Aseita voidaan siis vertailla
+     * @param t vertailun kohteena oleva ase
+     * @return palauttaa negatiivista jos tämä ase on tehokkuudeltaan huonompi jne.
+     * 
+     */
     @Override
     public int compareTo(Ase t) {
         return this.getTehokkuus() - t.getTehokkuus();

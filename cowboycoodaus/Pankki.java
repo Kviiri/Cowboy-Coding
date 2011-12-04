@@ -48,9 +48,18 @@ public class Pankki extends Rakennus implements Ryostettava{
     public void setKulta(double summa) {
         kulta = summa;
     }
+    /**
+     * Pankilla on 0 - useita vartijoita
+     * @param ihminen lisŠttŠvŠ vartija
+     */
     public void lisaaVartija(Ihminen ihminen) {
         vartijat.add(ihminen);
     }
+    /**
+     * Tarkistaa kuinka monta vartijaa ihminen voittaa
+     * @param ihminen vertailtava ihminen (ryšstŠjŠ)
+     * @return mŠŠrŠ voitettuja vartijoita
+     */
     public int kuinkaMontaVartijaaVoittaa(Ihminen ihminen) {
         int voitot = 0;
         for (Ihminen vartija : vartijat) {

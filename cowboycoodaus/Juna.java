@@ -8,31 +8,41 @@ import java.util.ArrayList;
  */
 
 /**
- *
+ * IhmisSailion perivä, ryöstettävä ja liikkuva
  * @author tonykovanen, kviiri
  */
 public class Juna extends IhmisSailio implements Ryostettava, Liikkuva {
     
-    private String nimi;
+    private String malli;
     private int nopeus;
     private double omaKulta;        //Kulta joka on junassa mutta ei matkustajilla
-    private int liikkumisAikaaJaljella;     //Kuinka monta "ticki√§" juna liikkuu viel√§
-    public Juna(String nimi, int nopeus, int omaKulta) {
-        this.nimi = nimi;
-        this.nopeus = nopeus;
+    /**
+     * Junalla on malli ja oma kultamäärä
+     * @param malli junan malli
+     * @param omaKulta junan oma kultamäärä
+     */
+    public Juna(String malli, int omaKulta) {
+        this.malli = malli;
         this.omaKulta = omaKulta;
-        liikkumisAikaaJaljella = 0;
     }
-    
+    /**
+     * Juna voidaan siis ryöstää, ja junan oman kullan lisäksi ryöstetään myös samalla kaikki matkustajat. Ota huomioon matkustajien aseet.
+     * @param ryostaja junan ryöstävä ihminen
+     * @return ryöstetty rahasumma
+     */
     @Override
     public double ryosta(Ihminen ryostaja) {
-        double summa = 0;
+        double summa = this.omaKulta;
         for (Ihminen ihminen : super.ihmiset) {
             summa += ihminen.ryosta(ryostaja);
         }
+        this.omaKulta = 0;
         return summa;
     }
-
+    /**
+     * Kun juna liikkuu alueelta toiselle myös sen sisällä olevat ihmiset liikkuvat alueelta toiselle
+     * @param kohde kohdealue
+     */
     @Override
     public void liiku(Alue kohde) {
         for (Ihminen ihminen : super.ihmiset) {
@@ -40,14 +50,19 @@ public class Juna extends IhmisSailio implements Ryostettava, Liikkuva {
         }
         super.alue.poistaSisaltava(this);
         kohde.lisaaSisaltava(this);
-        liikkumisAikaaJaljella = (int)Math.ceil(300.0 / getNopeus());
     }
-
+    /**
+     * 
+     * @return nopeus
+     */
     @Override
     public int getNopeus() {
         return nopeus;
     }
-
+    /**
+     * 
+     * @return junan oma kultamäärä + matkustajien kultamäärä
+     */
     @Override
     public double getKulta() {
         double kultaa = omaKulta;
@@ -56,7 +71,10 @@ public class Juna extends IhmisSailio implements Ryostettava, Liikkuva {
         }
         return kultaa;
     }
-
+    /**
+     * Asettaa junan oman kultamäärän
+     * @param summa uusi kultamäärä
+     */
     @Override
     public void setKulta(double summa) {
         omaKulta = summa;

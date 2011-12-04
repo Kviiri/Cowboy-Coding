@@ -17,13 +17,25 @@ public abstract class Ihminen extends Elain implements Ryostettava {
     private String sukunimi;
     private double kulta;
     private Rooli rooli;
-    
+    /**
+     * 
+     * @param sukupuoli
+     * @param nimi
+     * @param sukunimi
+     * @param rooli ihmisellä on myös rooli
+     */
     public Ihminen(boolean sukupuoli, String nimi, String sukunimi, Rooli rooli) {
         super(sukupuoli, nimi);
         this.sukunimi = sukunimi;
         this.kulta = 0;
         this.rooli = rooli;
     }
+    /**
+     * Ihmisen voi myös alustaa vaihtoehtoisella konstruktorilla jossa rooliksi annetaan Herra tai Rouva sukupuolesta riippuen
+     * @param sukupuoli
+     * @param nimi
+     * @param sukunimi 
+     */
     public Ihminen(boolean sukupuoli, String nimi, String sukunimi) {
         this(sukupuoli, nimi, sukunimi, new Rooli(sukupuoli ? "Herra" : "Rouva"));
     }
@@ -37,7 +49,7 @@ public abstract class Ihminen extends Elain implements Ryostettava {
         is.lisaaIhminen(this);
     }
     /**
-     * Siirt√§√§ ihmisen ulos IhmisiSailiosta
+     * Siirt√§√§ ihmisen ulos IhmisiSailiosta, jos ihminen ei ole siellä niin mitään ei tapahdu
      * @param is
      */
     public void astuUlos(IhmisSailio is) {
@@ -84,7 +96,7 @@ public abstract class Ihminen extends Elain implements Ryostettava {
         return Collections.max(this.aseet);
     }
     /**
-     * Antaa ihmiselle uuden aseen
+     * Lisää ihmiselle uuden aseen, niitä voi olla siis useita
      * @param a ase joka annetaan
      */
     public void annaAse(Ase a) {
