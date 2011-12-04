@@ -48,9 +48,18 @@ public class Pankki extends Rakennus implements Ryostettava{
     public void setKulta(double summa) {
         kulta = summa;
     }
+    /**
+     * Lisää uuden vartijan pankkiin.
+     * @param ihminen 
+     */
     public void lisaaVartija(Ihminen ihminen) {
         vartijat.add(ihminen);
     }
+    /**
+     * Laskee montako vartijaa Ryöstäjä voittaa aseillaan
+     * @param ihminen Ryöstäjä
+     * @return
+     */
     public int kuinkaMontaVartijaaVoittaa(Ihminen ihminen) {
         int voitot = 0;
         for (Ihminen vartija : vartijat) {

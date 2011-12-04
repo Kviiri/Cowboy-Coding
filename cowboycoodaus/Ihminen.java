@@ -113,4 +113,8 @@ public abstract class Ihminen extends Elain implements Ryostettava {
     public void setKulta(double summa) {
         this.kulta = summa;
     }
+    @Override
+    public String toString() {
+        return rooli + " " + getNimi() + " " + sukunimi + ", omaisuuden arvo " + kulta + "$";
+    }
 }
