@@ -10,7 +10,7 @@ package cowboycoodaus;
  */
 public class Kaarme extends Elain{
     /**
-     * Käärme toteuttaa vain yliluokan konstruktoria
+     * K√§√§rme toteuttaa vain yliluokan konstruktoria
      * @param sukupuoli
      * @param nimi 
      */
@@ -18,8 +18,8 @@ public class Kaarme extends Elain{
         super(sukupuoli, nimi);
     }
     /**
-     * Käärme voi purra eläintä ja ääntelee seraavasti: HISS!, *puree*, sitten kutsutaan eläimen kiroa() metodia
-     * @param e purtava eläin
+     * K√§√§rme voi purra el√§int√§ ja √§√§ntelee seraavasti: HISS!, *puree*, sitten kutsutaan el√§imen kiroa() metodia
+     * @param e purtava el√§in
      */
     public void pure(Elain e) {
         System.out.println("HISS!");

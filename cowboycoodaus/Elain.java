@@ -14,9 +14,9 @@ public abstract class Elain implements Liikkuva{
     private Alue alue;
     
     /**
-     * Eläimelle annetaan sukupuoli nimi
-     * @param sukupuoli eläimen sukupuoli, true jos uros, false jos naaras
-     * @param nimi eläimen nimi
+     * El√§imelle annetaan sukupuoli nimi
+     * @param sukupuoli elÔøΩimen sukupuoli, true jos uros, false jos naaras
+     * @param nimi elÔøΩimen nimi
      */
     public Elain(boolean sukupuoli, String nimi) {
         this.sukupuoli = sukupuoli;
@@ -37,14 +37,14 @@ public abstract class Elain implements Liikkuva{
         return nimi;
     }
     /**
-     * Eläimellä voi myös olla alue (kuuluu yhteen alueeseen tai ei yhteenkään)
-     * @param alue alue johon eläin asetetaan kuuluvaksi
+     * El√§imell√§ voi my√∂s olla alue (kuuluu yhteen alueeseen tai ei yhteenk√§√§n)
+     * @param alue alue johon el√§in asetetaan kuuluvaksi
      */
     public void setAlue(Alue alue) {
         this.alue = alue;
     }
     /**
-     * Eläin voi liikkua alueelta toiselle
+     * El√§in voi liikkua alueelta toiselle
      * @param alue kohdealue johon liikutaan
      */
     @Override
@@ -57,4 +57,13 @@ public abstract class Elain implements Liikkuva{
      * @return palauttaa kiroilun string muodossa
      */
     public abstract String kiroa();
+    /**
+     * Palauttaa Elaimen merkkijonoesityksen muodossa
+     * Kojootti Rekku, koiras
+     * @return 
+     */
+    @Override
+    public String toString() {
+        return this.getClass().getSimpleName() + " " + nimi + ", " + (sukupuoli ? "koiras" : "naaras");
+    }
 }

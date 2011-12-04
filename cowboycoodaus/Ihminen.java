@@ -22,7 +22,7 @@ public abstract class Ihminen extends Elain implements Ryostettava {
      * @param sukupuoli
      * @param nimi
      * @param sukunimi
-     * @param rooli ihmisellŠ on myšs rooli
+     * @param rooli ihmisellï¿½ on myï¿½s rooli
      */
     public Ihminen(boolean sukupuoli, String nimi, String sukunimi, Rooli rooli) {
         super(sukupuoli, nimi);
@@ -31,7 +31,7 @@ public abstract class Ihminen extends Elain implements Ryostettava {
         this.rooli = rooli;
     }
     /**
-     * Ihmisen voi myšs alustaa vaihtoehtoisella konstruktorilla jossa rooliksi annetaan Herra tai Rouva sukupuolesta riippuen
+     * Ihmisen voi myï¿½s alustaa vaihtoehtoisella konstruktorilla jossa rooliksi annetaan Herra tai Rouva sukupuolesta riippuen
      * @param sukupuoli
      * @param nimi
      * @param sukunimi 
@@ -49,7 +49,7 @@ public abstract class Ihminen extends Elain implements Ryostettava {
         is.lisaaIhminen(this);
     }
     /**
-     * SiirtÃ¤Ã¤ ihmisen ulos IhmisiSailiosta, jos ihminen ei ole siellŠ niin mitŠŠn ei tapahdu
+     * SiirtÃ¤Ã¤ ihmisen ulos IhmisiSailiosta, jos ihminen ei ole siellï¿½ niin mitï¿½ï¿½n ei tapahdu
      * @param is
      */
     public void astuUlos(IhmisSailio is) {
@@ -96,7 +96,7 @@ public abstract class Ihminen extends Elain implements Ryostettava {
         return Collections.max(this.aseet);
     }
     /**
-     * LisŠŠ ihmiselle uuden aseen, niitŠ voi olla siis useita
+     * Lisï¿½ï¿½ ihmiselle uuden aseen, niitï¿½ voi olla siis useita
      * @param a ase joka annetaan
      */
     public void annaAse(Ase a) {
@@ -125,8 +125,13 @@ public abstract class Ihminen extends Elain implements Ryostettava {
     public void setKulta(double summa) {
         this.kulta = summa;
     }
+    /**
+     * Palauttaa Ihmisen toString-esityksen muodossa
+     * "Yliopistonlehtori Macho Luukkandez, Meksikaani, omaisuuden arvo $500."
+     * @return Olion merkkijonoesitys
+     */
     @Override
     public String toString() {
-        return rooli + " " + getNimi() + " " + sukunimi + ", omaisuuden arvo " + kulta + "$";
+        return rooli.getNimi() + " " + getNimi() + " " + sukunimi + ", " +  getClass().getSimpleName() + ", omaisuuden arvo $" + kulta + ".";
     }
 }
