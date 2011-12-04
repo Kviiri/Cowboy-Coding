@@ -8,7 +8,7 @@ import java.util.ArrayList;
  */
 public class Pankki extends Rakennus implements Ryostettava{
     private double kulta;
-    private ArrayList<Ihminen> Vartijat;
+    private ArrayList<Ihminen> vartijat;
     /**
      * Luo uuden pankin. Käytä Rakennus-luokan konstruktoria avuksesi.
      * @param kulta Pankin kultavarasto
@@ -21,13 +21,16 @@ public class Pankki extends Rakennus implements Ryostettava{
         this.kulta = kulta;
     }
     /**
-     * Ryöstää pankin.
+     * Ryöstää pankin. Ryöstösaalis lasketaan sen mukaan kuinka suuren osan (prosentteina) varitijoista varas voittaa
      * @param ryostaja Ihminen joka tekee ryöstön
      * @return Saaliin määrä
      */
     @Override
     public double ryosta(Ihminen ryostaja) {
-        throw new UnsupportedOperationException("Not supported yet.");
+        double ryostoProsentti = kuinkaMontaVartijaaVoittaa(ryostaja) / vartijat.size();
+        double maara = kulta * ryostoProsentti;
+        kulta -= maara;
+        return maara;
     }
     /**
      * Palauttaa pankin kultasisällön.
@@ -35,7 +38,7 @@ public class Pankki extends Rakennus implements Ryostettava{
      */
     @Override
     public double getKulta() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        return kulta;
     }
     /**
      * Asettaa oankin kultasisällön
@@ -43,6 +46,18 @@ public class Pankki extends Rakennus implements Ryostettava{
      */
     @Override
     public void setKulta(double summa) {
-        throw new UnsupportedOperationException("Not supported yet.");
+        kulta = summa;
+    }
+    public void lisaaVartija(Ihminen ihminen) {
+        vartijat.add(ihminen);
+    }
+    public int kuinkaMontaVartijaaVoittaa(Ihminen ihminen) {
+        int voitot = 0;
+        for (Ihminen vartija : vartijat) {
+           if (ihminen.parasAse().getTehokkuus() > vartija.parasAse().getTehokkuus()) {
+               voitot++;
+           }
+        }
+        return voitot;
     }
 }
