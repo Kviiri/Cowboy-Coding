@@ -1,12 +1,12 @@
 package cowboycoodaus;
 
 /**
- * Meksikaani, tuo Villin L√§nnen leppoisa matkustelija
+ * Meksikaani, tuo Villin Lännen leppoisa matkustelija
  * @author kviiri, tonykovanen
  */
 public class Meksikaani extends Ihminen{
     /**
-     * Luo uuden Meksikaanin (k√§yt√§ yliluokan konstruktoria)
+     * Luo uuden Meksikaanin (kysytään yliluokan konstruktoria)
      * @param sukupuoli
      * @param nimi
      * @param sukunimi
@@ -16,8 +16,8 @@ public class Meksikaani extends Ihminen{
         super(sukupuoli, nimi, sukunimi, rooli);
     }
     /**
-     * Luo uuden Meksikaanin (k√§yt√§ yliluokan konstruktoria)
-     * Rooliksi asetetaan "Se√±or" miehille ja "Se√±ora" naisille
+     * Luo uuden Meksikaanin (kysytään yliluokan konstruktoria)
+     * Rooliksi asetetaan "Señor" miehille ja "Señora" naisille
      * @param sukupuoli
      * @param nimi
      * @param sukunimi 

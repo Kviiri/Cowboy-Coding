@@ -9,7 +9,9 @@ import java.util.Collections;
  */
 
 /**
- *
+ * Ihminen on abstrakti yliluokka sen periville Meksikaaneille ja muille mahdollisille vastaaville luokille. Macho Luukkandez on sekŠ Meksikaani, Ihminen, ettŠ Elain.
+ * IhmisillŠ on aseita mielivaltainen mŠŠrŠ (aluksi 0), kultamŠŠrŠ (aluksi 0)
+ * Ihminen on Ryostettava
  * @author tonykovanen, kviiri
  */
 public abstract class Ihminen extends Elain implements Ryostettava {
@@ -21,8 +23,8 @@ public abstract class Ihminen extends Elain implements Ryostettava {
      * 
      * @param sukupuoli
      * @param nimi
-     * @param sukunimi
-     * @param rooli ihmisellï¿½ on myï¿½s rooli
+     * @param sukunimi IhmisellŠ on sukupuolen ja nimen lisŠksi sukunimi
+     * @param rooli IhmisellŠ on myšs rooli
      */
     public Ihminen(boolean sukupuoli, String nimi, String sukunimi, Rooli rooli) {
         super(sukupuoli, nimi);
@@ -31,7 +33,7 @@ public abstract class Ihminen extends Elain implements Ryostettava {
         this.rooli = rooli;
     }
     /**
-     * Ihmisen voi myï¿½s alustaa vaihtoehtoisella konstruktorilla jossa rooliksi annetaan Herra tai Rouva sukupuolesta riippuen
+     * Ihmisen voi myšs alustaa vaihtoehtoisella konstruktorilla jossa rooliksi annetaan Herra tai Rouva sukupuolesta riippuen
      * @param sukupuoli
      * @param nimi
      * @param sukunimi 
@@ -42,30 +44,30 @@ public abstract class Ihminen extends Elain implements Ryostettava {
     
     
     /**
-     * SiirtÃ¤Ã¤ ihmisen parametrina annettuun IhmisSailioon
-     * @param is 
+     * SiirtŠŠ ihmisen parametrina annettuun IhmisSailioon
+     * @param is Kohde IhmisSailio
      */
     public void astuSisaan(IhmisSailio is) {
         is.lisaaIhminen(this);
     }
     /**
-     * SiirtÃ¤Ã¤ ihmisen ulos IhmisiSailiosta, jos ihminen ei ole siellï¿½ niin mitï¿½ï¿½n ei tapahdu
-     * @param is
+     * SiirtŠŠ ihmisen ulos IhmisiSailiosta, jos ihminen ei ole sisŠllŠ niin mitŠŠn ei tapahdu
+     * @param is Kohde IhmisSailio
      */
     public void astuUlos(IhmisSailio is) {
         is.poistaIhminen(this);
     }
     /**
      * Ihminen nousee ratsaille
-     * @param hevonen hevonen jonka ratsaille ihminen nousee
+     * @param hevonen Hevonen, jonka ratsaille ihminen nousee
      */
     public void nouseRatsaille(Hevonen hevonen) {
         hevonen.otaRatsaille(this);
     }
     /**
-     * ParametrinÃ¤ annettu Ihminen ryÃ¶stÃ¤Ã¤ tÃ¤mÃ¤n ihmisen. RyÃ¶stÃ¶n onnistuminen riippuu ihmisten aseiden tehosta.
+     * Parametrina annettu Ihminen ryšstŠŠ tŠmŠn (this) ihmisen. Ryšstšn onnistuminen riippuu ihmisten aseiden tehosta.
      * @param ryostaja
-     * @return double: saaliin mÃ¤Ã¤rÃ¤ (0 jos ryÃ¶stÃ¤jÃ¤n ase ei ole tehokkaampi kuin RyÃ¶stettÃ¤vÃ¤n ase, muulloin koko RyÃ¶stettÃ¤vÃ¤n omaisuus)
+     * @return double: saaliin mŠŠrŠ (0 jos ryšstŠjŠn ase ei ole tehokkaampi kuin tŠmŠn (this) ase, muulloin koko this.kulta omaisuus)
      */
     @Override
     public double ryosta(Ihminen ryostaja) {
@@ -77,9 +79,9 @@ public abstract class Ihminen extends Elain implements Ryostettava {
         return maara;
     }
     /**
-     * RyÃ¶stÃ¤Ã¤ kohteeksi annetun ryÃ¶stettÃ¤vÃ¤n.
-     * @param kohde
-     * @return 
+     * YrittŠŠ ryšstŠŠ kohteeksi annetun ryšstetŠvŠn.
+     * @param kohde Ryostettava rajapinnan toteuttava kohde
+     * @return double: Ryšstetty kultamŠŠrŠ. Toteutus jŠŠ riippumaan RyšstettŠvŠn ryosta(Ihminen ryostaja) metodista
      */
     public double teeRyosto(Ryostettava kohde) {
         double maara = kohde.ryosta(this);
@@ -87,8 +89,8 @@ public abstract class Ihminen extends Elain implements Ryostettava {
         return maara;
     }
     /**
-     * 
-     * @return tehokkain ase joka IhmisellÃ¤ on
+     * Ihmisen useista aseista valitaan paras
+     * @return Tehokkain ase joka ihmisellŠ on
      */
     public Ase parasAse() {
         if (this.aseet.isEmpty())
@@ -96,30 +98,23 @@ public abstract class Ihminen extends Elain implements Ryostettava {
         return Collections.max(this.aseet);
     }
     /**
-     * Lisï¿½ï¿½ ihmiselle uuden aseen, niitï¿½ voi olla siis useita
-     * @param a ase joka annetaan
+     * LisŠŠ ihmiselle uuden aseen, niitŠ voi olla siis useita
+     * @param a Ase joka annetaan
      */
     public void annaAse(Ase a) {
         aseet.add(a);
     }
     /**
-     * Palauttaa ihmisen liikkumisnopeuden.
-     * @return liikkumisnopeus
-     */
-    public int getNopeus() {
-        throw new UnsupportedOperationException("Ei tuettu vielÃ¤");
-    }
-    /**
-     * Palauttaa Ihmisen kultamÃ¤Ã¤rÃ¤n.
-     * @return kulta
+     * Palauttaa ihmisen kultamŠŠrŠn.
+     * @return Kulta
      */
     @Override
     public double getKulta() {
         return this.kulta;
     }
     /**
-     * Asettaa Ihmisen kultamÃ¤Ã¤rÃ¤n
-     * @param summa uusi kultamÃ¤Ã¤rÃ¤
+     * Asettaa Ihmisen kultamŠŠrŠn
+     * @param summa Uusi kultamŠŠrŠ
      */
     @Override
     public void setKulta(double summa) {

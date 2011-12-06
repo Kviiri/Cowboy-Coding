@@ -5,12 +5,12 @@
 package cowboycoodaus;
 
 /**
- *
+ * Sisältää mainin, jossa Macho Luukkandez ja Arriva Vihavandez kohtaavat
  * @author tonykovanen
  */
 public class CowboyCoodaus {
 
-    /**
+    /** Main metodista kaikki jo varmaan tietävät. Täydentäkää tähän toki itse jotain hienoa!
      * @param args the command line arguments
      */
     public static void main(String[] args) throws EiRatsastajaaException {

@@ -5,24 +5,24 @@ package cowboycoodaus;
  */
 
 /**
- * Rajapinta asioille, jotka voi ry√∂st√§√§.
+ * Rajapinta asioille, jotka voi ryöstää.
  * @author tonykovanen, kviiri
  */
 public interface Ryostettava {
     /**
-     * Ry√∂st√§√§ Ryostettavan.
-     * @param ryostaja Ry√∂st√∂n tekij√§
-     * @return Saaliin m√§√§r√§ 
+     * Ryöstää Ryostettavan.
+     * @param ryostaja Ryöstönn tekijä
+     * @return Saaliin määrä
      */
     public double ryosta(Ihminen ryostaja);
     /**
-     * Palauttaa Ryostettavalla olevan kultam√§√§r√§n
-     * @return kultam√§√§r√§
+     * Palauttaa Ryostettavalla olevan kultamäärän
+     * @return Kultamäärä
      */
     public double getKulta();
     /**
-     * Asettaa Ryostettavan sis√§lt√§m√§n kultam√§√§r√§n
-     * @param summa Uusi kultam√§√§r√§
+     * Asettaa Ryostettavan sisältämän kultamäärän
+     * @param summa Uusi kultamäärä
      */
     public void setKulta(double summa);
 }

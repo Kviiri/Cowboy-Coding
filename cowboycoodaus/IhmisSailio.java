@@ -14,37 +14,37 @@ public abstract class IhmisSailio {
     protected ArrayList<Ihminen> ihmiset = new ArrayList<Ihminen>();
     protected Alue alue;
     /**
-     * 
-     * @return palauttaa listan ihmisistŠ
+     * Ihmiset saadaan luokasta getterillŠ
+     * @return Palauttaa listan ihmisistŠ
      */
     public ArrayList<Ihminen> getIhmiset() {
         return ihmiset; 
     }
     /**
      * LisŠŠ ihmisen IhmisiaSisaltavaan
-     * @param ihminen lisŠttŠvŠ ihminen
+     * @param ihminen LisŠttŠvŠ ihminen
      */
     public void lisaaIhminen(Ihminen ihminen) {
         this.ihmiset.add(ihminen);
     }
     /**
      * Poistaa ihmisen IhmisiaSisaltavasta
-     * @param ihminen poistettava ihminen
+     * @param ihminen Poistettava ihminen
      */
     public void poistaIhminen(Ihminen ihminen) {
         ihmiset.remove(ihminen);
     }
     /**
      * Tarkistaa jos ihminen lšytyy IhmisSailiosta
-     * @param ihminen haettava ihminen 
-     * @return palauttaa true jos lšytyy, false jos ei lšydy
+     * @param ihminen Haettava ihminen 
+     * @return Palauttaa true jos lšytyy, false jos ei lšydy
      */
     public boolean onkoSailiossa(Ihminen ihminen) {
         return ihmiset.contains(ihminen);
     }
     /**
      * IhmisSailiolle voidaan asettaa alue johon se kuuluu
-     * @param alue asetettava alue
+     * @param alue Asetettava alue
      */
     public void setAlue(Alue alue) {
         this.alue = alue;

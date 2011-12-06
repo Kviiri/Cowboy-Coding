@@ -5,7 +5,8 @@ package cowboycoodaus;
  */
 
 /**
- *
+ * Elain on abstrakti yliluokka kaikille sitä periville eläimille. Myös Arto Vihavandez ja Macho Luukkandez ovat Elain luokan periviä.
+ * Elain on liikkuva
  * @author kviiri, tonykovanen
  */
 public abstract class Elain implements Liikkuva{
@@ -15,9 +16,9 @@ public abstract class Elain implements Liikkuva{
     private int nopeus = 10;
     
     /**
-     * El√§imelle annetaan sukupuoli nimi
-     * @param sukupuoli elÔøΩimen sukupuoli, true jos uros, false jos naaras
-     * @param nimi elÔøΩimen nimi
+     * Eläimelle annetaan sukupuoli ja nimi
+     * @param sukupuoli eläimen sukupuoli, true jos uros, false jos naaras
+     * @param nimi eläimen nimi
      */
     public Elain(boolean sukupuoli, String nimi) {
         this.sukupuoli = sukupuoli;
@@ -25,28 +26,28 @@ public abstract class Elain implements Liikkuva{
     }
     /**
      * 
-     * @return palauttaa sukupuolen
+     * @return Palauttaa sukupuolen
      */
     public boolean getSukupuoli() {
         return sukupuoli;
     }
     /**
      * 
-     * @return palauttaa nimen
+     * @return Palauttaa nimen
      */
     public String getNimi() {
         return nimi;
     }
     /**
-     * El√§imell√§ voi my√∂s olla alue (kuuluu yhteen alueeseen tai ei yhteenk√§√§n)
-     * @param alue alue johon el√§in asetetaan kuuluvaksi
+     * Eläimellä voi myös olla alue (kuuluu yhteen alueeseen tai ei yhteenkään)
+     * @param alue Alue johon eläin asetetaan kuuluvaksi
      */
     public void setAlue(Alue alue) {
         this.alue = alue;
     }
     /**
-     * El√§in voi liikkua alueelta toiselle
-     * @param alue kohdealue johon liikutaan
+     * Eläin voi liikkua alueelta toiselle
+     * @param alue Kohdealue johon liikutaan
      */
     @Override
     public void liiku(Alue alue) {
@@ -55,12 +56,14 @@ public abstract class Elain implements Liikkuva{
     }
     /**
      * Toteuttamaton abstrakti kiroa() metodi
-     * @return palauttaa kiroilun string muodossa
+     * @return Palauttaa kiroilun String muodossa
      */
     public abstract String kiroa();
     /**
      * Palauttaa Elaimen merkkijonoesityksen muodossa
      * Kojootti Rekku, koiras
+     * Vinkki! Voit toteuttaa toString() metodin tähän yliluokkaan kaikille eläimille, this.getClass().getSimpleName().
+     * Mitä edeltävä pätkä koodia palauttaa? Tutki asiaa. Tämä on ratkaisu! Sukupuolen tulostamisessa kannattaa tutustua ? operaattoriin
      * @return 
      */
     @Override
@@ -68,12 +71,16 @@ public abstract class Elain implements Liikkuva{
         return this.getClass().getSimpleName() + " " + nimi + ", " + (sukupuoli ? "koiras" : "naaras");
     }
      /**
-     * El≈†imenne voidaan asettaa nopeus, se on vakiolta 10 km / h
-     * @param nopeus asetettava nopeus
+     * Eläimelle voidaan asettaa nopeus, se on vakiolta 10 km / h
+     * @param nopeus Asetettava nopeus
      */
     public void setNopeus(int nopeus) {
         this.nopeus = nopeus;
     }
+    /**
+     * 
+     * @return Palauttaa eläimen nopeuden
+     */
     public int getNopeus() {
         return this.nopeus;
     }

@@ -9,6 +9,7 @@ import java.util.ArrayList;
 
 /**
  * IhmisSailion perivŠ, ryšstettŠvŠ ja liikkuva
+ * Junan vakionopeus on 60 km/h
  * @author tonykovanen, kviiri
  */
 public class Juna extends IhmisSailio implements Ryostettava, Liikkuva {
@@ -17,8 +18,8 @@ public class Juna extends IhmisSailio implements Ryostettava, Liikkuva {
     private double omaKulta;        //Kulta joka on junassa mutta ei matkustajilla
     /**
      * Junalla on malli ja oma kultamŠŠrŠ
-     * @param malli junan malli
-     * @param omaKulta junan oma kultamŠŠrŠ
+     * @param malli Junan malli
+     * @param omaKulta Junan oma kultamŠŠrŠ
      */
     public Juna(String malli, int omaKulta) {
         this.malli = malli;
@@ -26,8 +27,8 @@ public class Juna extends IhmisSailio implements Ryostettava, Liikkuva {
     }
     /**
      * Juna voidaan siis ryšstŠŠ, ja junan oman kullan lisŠksi ryšstetŠŠn myšs samalla kaikki matkustajat. Ota huomioon matkustajien aseet.
-     * @param ryostaja junan ryšstŠvŠ ihminen
-     * @return ryšstetty rahasumma
+     * @param ryostaja Junan ryšstŠvŠ ihminen
+     * @return Ryšstetty rahasumma
      */
     @Override
     public double ryosta(Ihminen ryostaja) {
@@ -40,7 +41,7 @@ public class Juna extends IhmisSailio implements Ryostettava, Liikkuva {
     }
     /**
      * Kun juna liikkuu alueelta toiselle myšs sen sisŠllŠ olevat ihmiset liikkuvat alueelta toiselle
-     * @param kohde kohdealue
+     * @param kohde Kohdealue
      */
     @Override
     public void liiku(Alue kohde) {
@@ -52,7 +53,7 @@ public class Juna extends IhmisSailio implements Ryostettava, Liikkuva {
     }
     /**
      * 
-     * @return nopeus
+     * @return Nopeus
      */
     @Override
     public int getNopeus() {
@@ -60,7 +61,7 @@ public class Juna extends IhmisSailio implements Ryostettava, Liikkuva {
     }
     /**
      * 
-     * @return junan oma kultamŠŠrŠ + matkustajien kultamŠŠrŠ
+     * @return Junan oma kultamŠŠrŠ + matkustajien kultamŠŠrŠ
      */
     @Override
     public double getKulta() {
@@ -72,15 +73,15 @@ public class Juna extends IhmisSailio implements Ryostettava, Liikkuva {
     }
     /**
      * Asettaa junan oman kultamŠŠrŠn
-     * @param summa uusi kultamŠŠrŠ
+     * @param summa Uusi kultamŠŠrŠ
      */
     @Override
     public void setKulta(double summa) {
         omaKulta = summa;
     }
     /**
-     * Junalle voidaan settaa nopeus, se on vakiolta 60 km / h
-     * @param nopeus 
+     * Junalle voidaan asettaa nopeus, se on vakiolta 60 km / h
+     * @param nopeus Asetettava nopeus
      */
     @Override
     public void setNopeus(int nopeus) {

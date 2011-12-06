@@ -8,7 +8,7 @@ package cowboycoodaus;
 import java.util.ArrayList;
 
 /**
- * Yksitt√§inen rakennus, jolla on leveys, korkeus ja syvyys
+ * Yksittänen rakennus, jolla on leveys, korkeus ja syvyys
  * @author kviiri, tonykovanen
  */
 public abstract class Rakennus extends IhmisSailio {

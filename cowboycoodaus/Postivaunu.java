@@ -7,7 +7,7 @@ import java.util.logging.Logger;
 
 
 /**
- * Postivaunussa voi matkustaa. Sen voi my√∂s ry√∂st√§√§.
+ * Postivaunussa voi matkustaa. Sen voi myös ryöstää.
  * @author kviiri, tonykovanen
  */
 public class Postivaunu extends IhmisSailio implements Ryostettava, Liikkuva {
@@ -15,15 +15,15 @@ public class Postivaunu extends IhmisSailio implements Ryostettava, Liikkuva {
     private int nopeus = 5;
     /**
      * Luo uuden postivaunun
-     * @param kulta postivaunun kultasis√§lt√∂
+     * @param kulta Postivaunun kultasisisältö
      */
     public Postivaunu(double kulta) {
         this.kulta = kulta;
     }
     /**
-     * Ry√∂st√§√§ postivaunun. Kaikki vaunun kulta siirtyy ry√∂st√§j√§lle.
-     * @param ryostaja Ihminen joka tekee ry√∂st√∂n.
-     * @return saaliin m√§√§r√§
+     * Ryöstää postivaunun. Kaikki vaunun kulta siirtyy ryöstäjälle. Matkustajia ei ryöstetä.
+     * @param ryostaja Ihminen joka tekee ryöstön.
+     * @return Saaliin määrä
      */
     @Override
     public double ryosta(Ihminen ryostaja) {
@@ -32,8 +32,8 @@ public class Postivaunu extends IhmisSailio implements Ryostettava, Liikkuva {
         return maara;
     }
     /**
-     * Postivaunu liikkuu. Siirt√§√§ kaikki sis√§ll√§ olevat ihmiset my√∂s kohdealueelle.
-     * @param kohde Alue jonne siirryt√§√§n
+     * Postivaunu liikkuu. Siirtää kaikki sisällä olevat ihmiset myös kohdealueelle.
+     * @param kohde Alue jonne siirrytään
      */
     @Override
     public void liiku(Alue kohde) {
@@ -52,23 +52,23 @@ public class Postivaunu extends IhmisSailio implements Ryostettava, Liikkuva {
     }
     /**
      * Palauttaa postivaunun nopeuden.
-     * @return postivaunun nopeus
+     * @return Postivaunun nopeus
      */
     @Override
     public int getNopeus() {
         return this.nopeus;
     }
     /**
-     * Palauttaa postivaunun kultasis√§ll√∂n.
-     * @return postivaunun kultasis√§lt√∂
+     * Palauttaa postivaunun kultasisällön.
+     * @return Postivaunun kultasisältö
      */
     @Override
     public double getKulta() {
         return this.kulta;
     }
     /**
-     * Asettaa postivaunun kultasis√§ll√∂n
-     * @param summa uusi kultasis√§lt√∂
+     * Asettaa postivaunun kultasisällön
+     * @param summa Uusi kultasisältö
      */
     @Override
     public void setKulta(double summa) {

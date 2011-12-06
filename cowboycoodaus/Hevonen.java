@@ -9,14 +9,14 @@ import java.util.logging.Logger;
  */
 
 /**
- *
+ * Hevonen on Elain luokan perivŠ ratsastettava elŠin. SillŠ voi siis olla ratsastaja.
  * @author kviiri, tonykovanen
  */
 public class Hevonen extends Elain implements Ratsastettava {
     private Ihminen ratsastaja;
     
     /**
-     * 
+     * Hevoselle annetaan vain yliluokan konstruktori vaatimat parametrit. Miten kutsut yliluokan konstruktoria?
      * @param sukupuoli
      * @param nimi 
      */
@@ -25,16 +25,16 @@ public class Hevonen extends Elain implements Ratsastettava {
     }
     /**
      * Hevosella voi olla ratsastaja
-     * @param ihminen ihminen josta tulee ratsastaja
+     * @param ihminen Ihminen joka asetetaan ratsastajaksi
      */
     @Override
     public void otaRatsaille(Ihminen ihminen) {
         this.ratsastaja = ihminen;
     }
     /**
-     * 
+     * Ratsastajaan pŠŠstŠŠn kŠsiksi getterillŠ
      * @return palauttaa ratsastajan
-     * @throws EiRatsastajaaException jos ratsastajaa ei ole niin heitettŠŠn poikkeus
+     * @throws EiRatsastajaaException Jos ratsastajaa ei ole niin heitettŠŠn poikkeus
      */
     @Override
     public Ihminen getRatsastaja() throws EiRatsastajaaException {
@@ -45,7 +45,7 @@ public class Hevonen extends Elain implements Ratsastettava {
     }
     /**
      * 
-     * @return hevonen kiroaa "Ihahaa!"
+     * @return Hevonen kiroaa "Ihahaa!"
      */
     @Override
     public String kiroa() {
@@ -53,7 +53,7 @@ public class Hevonen extends Elain implements Ratsastettava {
     }
     /**
      * Jos hevosella on ratsastaja niin molemmat liikkuvat, muuten vain hevonen liikkuu
-     * @param alue alue johon liikutaan
+     * @param alue Alue johon liikutaan
      */
     @Override
     public void liiku(Alue alue) {

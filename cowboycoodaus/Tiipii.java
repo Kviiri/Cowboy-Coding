@@ -1,34 +1,34 @@
 package cowboycoodaus;
 
 /**
- * Tiipii on ympyr√§kartion muotoinen intiaanimaja. Tiipiin leveys ja syvyys ovat aina yht√§suuret.
+ * Tiipii on ympyräkartion muotoinen intiaanimaja. Tiipiin leveys ja syvyys ovat aina yhtäsuuret.
  * @author kviiri, tonykovanen
  */
 public class Tiipii extends Rakennus {
     /**
      * Luo uuden tiipiin.
-     * @param sade Tiipiin pohjaympyr√§n s√§de. Jos sade on negatiivinen, k√§ytet√§√§n itseisarvoa
-     * @param korkeus Tiipiin korkeus. Jos korkeus on negatiivinen, k√§ytet√§√§n itseisarvoa
+     * @param sade Tiipiin pohjaympyrän s√§de. Jos sade on negatiivinen, käytetään itseisarvoa
+     * @param korkeus Tiipiin korkeus. Jos korkeus on negatiivinen, käytetään itseisarvoa
      */
     public Tiipii(double sade, double korkeus) {
         super(sade, korkeus, sade);
     }
     /**
-     * Laskee tiipiin tilavuuden (k√§yt√§ apuna pohjaPintaAla - metodia!)
+     * Laskee tiipiin tilavuuden (käytä apuna pohjaPintaAla - metodia!)
      * @return tilavuus
      */
     public double tilavuus() {
         return (pohjaPintaAla() * super.getKorkeus()) / 3;
     }
     /**
-     * Palauttaa lattiaympyr√§n s√§teen.
-     * @return lattiaympyr√§n s√§de
+     * Palauttaa lattiaympyrän säteen.
+     * @return lattiaympyrän säde
      */
     public double getSade() {
         return getLeveys();
     }
     /**
-     * Laskee Tiipiin pohjan pinta-alan. Pohja on ympyr√§n muotoinen.
+     * Laskee Tiipiin pohjan pinta-alan. Pohja on ympyrän muotoinen.
      * @return Tiipiin lattiapinta-ala
      */
     public double pohjaPintaAla() {
@@ -36,9 +36,9 @@ public class Tiipii extends Rakennus {
     }
 
     /**
-     * Laajentaa Tiipiit√§. K√§yt√§ yliluokan laajenna-metodia avuksesi. 
+     * Laajentaa Tiipiitä. Käytä yliluokan laajenna-metodia avuksesi. 
      * @param sadeLaajennos Syvyyteen ja Leveyteen teht√§v√§ muutos.
-     * @param korkeusLaajennos Korkeuteen teht√§v√§ muutos.
+     * @param korkeusLaajennos Korkeuteen tehtävä muutos.
      */
     public void laajenna(double sadeLaajennos, double korkeusLaajennos) {
         super.laajenna(sadeLaajennos, korkeusLaajennos, sadeLaajennos);

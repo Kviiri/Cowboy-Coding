@@ -5,7 +5,7 @@
 package cowboycoodaus;
 
 /**
- * 
+ * IhmisillŠ on useita aseita. Aseita kŠytetŠŠn esim. ryšstšn onnistumisen arvioinnissa.
  * @author tonykovanen, kviiri
  */
 public class Ase implements Comparable<Ase>{
@@ -27,7 +27,8 @@ public class Ase implements Comparable<Ase>{
     /**
      * Aseita voidaan siis vertailla
      * @param t vertailun kohteena oleva ase
-     * @return palauttaa negatiivista jos tŠmŠ ase on tehokkuudeltaan huonompi jne.
+     * @return palauttaa negatiivista jos tŠmŠ ase on tehokkuudeltaan huonompi jne. LisŠŠ tietoa Comparablen toteuttamisesta lšytyy sekŠ ohjan materiaalista, ettŠ Javan omasta APIsta
+     *
      * 
      */
     @Override

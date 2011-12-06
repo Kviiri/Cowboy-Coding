@@ -5,21 +5,21 @@
 package cowboycoodaus;
 
 /**
- * Henkilöllä oleva rooli.
+ * Ihmisell� oleva rooli.
  * @author kviiri, tonykovanen
  */
 public class Rooli {
     private String nimi;
     /**
      * Luo uuden roolin.
-     * @param nimi roolin nimi.
+     * @param nimi Roolin nimi.
      */
     public Rooli(String nimi) {
         this.nimi = nimi;
     }
     /**
      * Palauttaa roolin nimen.
-     * @return roolin nimi
+     * @return Roolin nimi
      */
     public String getNimi() {
         return this.nimi;

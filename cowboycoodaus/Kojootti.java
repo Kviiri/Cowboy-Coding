@@ -5,13 +5,14 @@
 package cowboycoodaus;
 
 /**
- * Toteuttaa ratsastettavaa ja perii eläimen
+ * Toteuttaa ratsastettavaa ja perii eläimen. Kojootti on kuitenkin vaarallinen eläin.
+ * Kerolan sanoin: "Olkaa siis varovaisia."
  * @author tonykovanen, kviiri
  */
 public class Kojootti extends Elain implements Ratsastettava {
     private Ihminen ratsastaja;
     /**
-     * Toteuttaa yliluokan konstruktorin
+     * Kutsuu yliluokan konstruktoria
      * @param sukupuoli
      * @param nimi 
      */
@@ -20,16 +21,16 @@ public class Kojootti extends Elain implements Ratsastettava {
     }
     /**
      * Ottaa ratsaille ihmisen
-     * @param ihminen ratsastaja
+     * @param ihminen Ratsastaja
      */
     @Override
     public void otaRatsaille(Ihminen ihminen) {
         this.ratsastaja = ihminen;
     }
     /**
-     * 
-     * @return ratsastaja
-     * @throws EiRatsastajaaException jos ei ole ratsastajaa
+     * Ratsastajaan päästään käsiksi getterillä
+     * @return Palautetaan ratsastaja
+     * @throws EiRatsastajaaException Jos ei ole ratsastajaa
      */
     @Override
     public Ihminen getRatsastaja() throws EiRatsastajaaException {
@@ -39,15 +40,7 @@ public class Kojootti extends Elain implements Ratsastettava {
         return this.ratsastaja;
     }
     /**
-     * 
-     * @return nopeus
-     */
-    @Override
-    public int getNopeus() {
-        throw new UnsupportedOperationException("Not supported yet.");
-    }
-    /**
-     * 
+     * Kojootti sanoo "Murr!"
      * @return "Murr!"
      */
     @Override
@@ -55,8 +48,8 @@ public class Kojootti extends Elain implements Ratsastettava {
         return "Murr!";
     }
     /**
-     * Jos ratsastaja niin molemmat liikkuvat, muuten vain kojootti
-     * @param alue kohdealue
+     * Jos kojootilla on ratsastaja niin molemmat liikkuvat, muuten vain kojootti
+     * @param alue Kohdealue
      */
     @Override
     public void liiku(Alue alue) {

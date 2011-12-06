@@ -9,7 +9,7 @@ public class Muuli extends Elain implements Ratsastettava {
     Ihminen ratsastaja;
 
     /**
-     * Luo uuden muulin (kÃ¤ytÃ¤ yliluokan konstruktoria)
+     * Luo uuden muulin (kysytŠŠn yliluokan konstruktoria)
      * @param sukupuoli true = uros, false = naaras
      * @param nimi Muulin nimi
      */
@@ -18,8 +18,8 @@ public class Muuli extends Elain implements Ratsastettava {
     }
 
     /**
-     * Asettaa parametrinÃ¤ annetun ihmisen muulin ratsaille.
-     * @param ihminen 
+     * Asettaa parametrina annetun ihmisen muulin ratsaille.
+     * @param ihminen Ratsastaja
      */
     @Override
     public void otaRatsaille(Ihminen ihminen) {
@@ -28,8 +28,8 @@ public class Muuli extends Elain implements Ratsastettava {
 
     /**
      * Palauttaa muulilla ratsastavan ihmisen.
-     * @return
-     * @throws EiRatsastajaaException jos ei ole ratsastajaa
+     * @return Ratsastaja
+     * @throws EiRatsastajaaException Jos ei ole ratsastajaa
      */
     @Override
     public Ihminen getRatsastaja() throws EiRatsastajaaException {
@@ -39,15 +39,7 @@ public class Muuli extends Elain implements Ratsastettava {
         return this.ratsastaja;
     }
     /**
-     * Palauttaa Muulin nopeuden
-     * @return 
-     */
-    @Override
-    public int getNopeus() {
-        throw new UnsupportedOperationException("Not supported yet.");
-    }
-    /**
-     * 
+     * Muulikin osaa kirota.
      * @return "Ihahaa!" 
      */
     @Override
@@ -56,7 +48,7 @@ public class Muuli extends Elain implements Ratsastettava {
     }
     /**
      * Liikkuu kohdealueelle
-     * @param alue 
+     * @param alue Kohdealue
      */
     @Override
     public void liiku(Alue alue) {
