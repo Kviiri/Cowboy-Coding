@@ -6,8 +6,7 @@ package cowboycoodaus;
  */
 public interface Liikkuva {
     /**
-     * Liikkuu parametrinä annetulle alueelle. Liikkuminen kestää matka/nopeus sekuntia, ja oletukselta joka alueelta on 60 km toiselle. Tätä voi laajentaa tehtävän vaiheessa 6.
-     * Vinkkinä tähän Thread.sleep(millisekunteinaOdotettavaAika)
+     * Liikkuu parametrinä annetulle alueelle. 
      * @param kohde Kohdealue
      */
     public void liiku(Alue kohde);
