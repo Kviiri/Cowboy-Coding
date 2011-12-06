@@ -11,7 +11,8 @@ import java.util.Collections;
 /**
  * Ihminen on abstrakti yliluokka sen periville Meksikaaneille ja muille mahdollisille vastaaville luokille. Macho Luukkandez on sekŠ Meksikaani, Ihminen, ettŠ Elain.
  * IhmisillŠ on aseita mielivaltainen mŠŠrŠ (aluksi 0), kultamŠŠrŠ (aluksi 0)
- * Ihminen on Ryostettava
+ * Ihminen on Ryostettava ja Ihmisen nopeus vaihtuu ratsun nopeudeksi kun noustaan ratsaille, sekŠ siitŠ tulee 0 kun ihminen on IhmisSailiossa
+ * Ihmisella on tai ei ole Ratsastettava ratsu
  * @author tonykovanen, kviiri
  */
 public abstract class Ihminen extends Elain implements Ryostettava {
@@ -19,6 +20,7 @@ public abstract class Ihminen extends Elain implements Ryostettava {
     private String sukunimi;
     private double kulta;
     private Rooli rooli;
+    private Ratsastettava ratsu;
     /**
      * 
      * @param sukupuoli
@@ -45,6 +47,7 @@ public abstract class Ihminen extends Elain implements Ryostettava {
     
     /**
      * SiirtŠŠ ihmisen parametrina annettuun IhmisSailioon
+     * Ihminen nousee ratsailta ja nopeudeksi asetetaan 0
      * @param is Kohde IhmisSailio
      */
     public void astuSisaan(IhmisSailio is) {
@@ -52,6 +55,7 @@ public abstract class Ihminen extends Elain implements Ryostettava {
     }
     /**
      * SiirtŠŠ ihmisen ulos IhmisiSailiosta, jos ihminen ei ole sisŠllŠ niin mitŠŠn ei tapahdu
+     * Jos ihminen on IhmisSailiossa niin poistumisen lisŠksi nopeus palautetaan vakioon
      * @param is Kohde IhmisSailio
      */
     public void astuUlos(IhmisSailio is) {
@@ -59,10 +63,18 @@ public abstract class Ihminen extends Elain implements Ryostettava {
     }
     /**
      * Ihminen nousee ratsaille
+     * Ihmisen nopeus tulee samaksi kuin ratsun
      * @param ratsastettava Ratsastettava, jonka ratsaille ihminen nousee
      */
     public void nouseRatsaille(Ratsastettava ratsastettava) {
         ratsastettava.otaRatsaille(this);
+        this.ratsu = ratsastettava;
+    }
+    /**
+     * TŠltŠ (this) poistetaan ratsu ja nopeus palaa takaisin oletukseen
+     */
+    public void nouseRatsailta() {
+        this.ratsu = null;
     }
     /**
      * Parametrina annettu Ihminen ryšstŠŠ tŠmŠn (this) ihmisen. Ryšstšn onnistuminen riippuu ihmisten aseiden tehosta.

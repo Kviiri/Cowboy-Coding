@@ -63,11 +63,11 @@ public abstract class Rakennus extends IhmisSailio {
 
     /**
      * Laajentaa rakennusta annettujen parametrien verran. Negatiivinen laajennos tulkitaan nollaksi.
-     * @param leveys leveyden laajennos
-     * @param korkeus korkeuden laajennos
-     * @param syvyys syvyyden laajennos
+     * @param leveydenLaajennos Leveyden laajennos
+     * @param korkeudenLaajennos Korkeuden laajennos
+     * @param syvyydenLaajennos Syvyyden laajennos
      */
-    public void laajenna(double leveys, double korkeus, double syvyys) {
+    public void laajenna(double leveydenLaajennos, double korkeudenLaajennos, double syvyydenLaajennos) {
         this.leveys += Math.max(0, leveys);
         this.korkeus += Math.max(0, korkeus);
         this.syvyys += Math.max(0, syvyys);

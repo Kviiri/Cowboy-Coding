@@ -21,7 +21,7 @@ public class Juna extends IhmisSailio implements Ryostettava, Liikkuva {
      * @param malli Junan malli
      * @param omaKulta Junan oma kultamäärä
      */
-    public Juna(String malli, int omaKulta) {
+    public Juna(String malli, double omaKulta) {
         this.malli = malli;
         this.omaKulta = omaKulta;
     }

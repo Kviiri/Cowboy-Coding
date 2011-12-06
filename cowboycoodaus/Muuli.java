@@ -57,4 +57,11 @@ public class Muuli extends Elain implements Ratsastettava {
             this.ratsastaja.liiku(alue);
         }
     }
+    /**
+     * Ratsastaja voidaan poistaa ratsailta
+     */
+    @Override
+    public void poistaRatsailta() {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
 }

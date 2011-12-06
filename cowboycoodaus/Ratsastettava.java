@@ -11,9 +11,13 @@ public interface Ratsastettava {
      */
     public void otaRatsaille(Ihminen ihminen);
     /**
-     * Palauttaa selÃ¤ssÃ¤ olevan ratsastajan. HeittÃ¤Ã¤ EiRatsastajaaExceptionin jos ratsastajaa ei ole.
+     * Palauttaa selŠssŠ olevan ratsastajan. HeittŠŠ EiRatsastajaaExceptionin jos ratsastajaa ei ole.
      * @return ratsastaja
      * @throws EiRatsastajaaException 
      */
     public Ihminen getRatsastaja() throws EiRatsastajaaException;
+    /**
+     * Jos ratsailla on Ihminen se poistetaan
+     */
+    public void poistaRatsailta();
 }

@@ -4,6 +4,8 @@
  */
 package cowboycoodaus;
 
+import java.util.Random;
+
 /**
  * Sisältää mainin, jossa Macho Luukkandez ja Arriva Vihavandez kohtaavat
  * @author tonykovanen
@@ -32,7 +34,9 @@ public static void main(String[] args) throws EiRatsastajaaException {
         Meksikaani vihavainen = new Meksikaani(Sukupuoli.UROS, "Arriva", "Vihavandez", new Rooli("Padawan")) {
             @Override //Älä välitä tästä pätkästä koodia. Tässä ylikirjoitetaan Vihavaisen kiroa() metodi lennosta
             public String kiroa() {
-                return "Voihan vesiputousmalli!";
+                String[] artonSloganit = {"Rok", "Mahtavaa", ":)"};
+                Random arvoIndeksi = new Random();
+                return artonSloganit[arvoIndeksi.nextInt(artonSloganit.length)];
             }
         };
         vihavainen.annaAse(new Ase("Vesiputousmalli", 3));

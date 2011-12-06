@@ -60,5 +60,12 @@ public class Kojootti extends Elain implements Ratsastettava {
             super.liiku(alue);
         }
     }
+    /**
+     * Ratsastaja voidaan poistaa ratsailta
+     */
+    @Override
+    public void poistaRatsailta() {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
 
 }
