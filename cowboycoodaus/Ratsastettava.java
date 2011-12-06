@@ -1,10 +1,10 @@
 package cowboycoodaus;
 
 /**
- * Rajapinta kaikelle, jolla voi ratsastaa.
+ * Rajapinta kaikelle, jolla voi ratsastaa. Ratsastettavat ovat myšs Liikkuvia.
  * @author kviiri, tonykovanen
  */
-public interface Ratsastettava {
+public interface Ratsastettava extends Liikkuva{
     /**
      * Ottaa ihmisen ratsaille
      * @param ihminen ratsaille otettava ihminen
