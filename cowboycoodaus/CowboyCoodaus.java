@@ -29,7 +29,12 @@ public static void main(String[] args) throws EiRatsastajaaException {
             System.out.println("Ei ratsastajaa!");
         }
         Pankki pankki = new Pankki(500, 20, 20, 20);
-        Meksikaani vihavainen = new Meksikaani(Sukupuoli.UROS, "Arriva", "Vihavandez", new Rooli("Padawan"));
+        Meksikaani vihavainen = new Meksikaani(Sukupuoli.UROS, "Arriva", "Vihavandez", new Rooli("Padawan")) {
+            @Override //Älä välitä tästä pätkästä koodia. Tässä ylikirjoitetaan Vihavaisen kiroa() metodi lennosta
+            public String kiroa() {
+                return "Voihan vesiputousmalli!";
+            }
+        };
         vihavainen.annaAse(new Ase("Vesiputousmalli", 3));
         pankki.lisaaVartija(vihavainen);
         heppa.getRatsastaja().teeRyosto(pankki);
@@ -37,7 +42,6 @@ public static void main(String[] args) throws EiRatsastajaaException {
         Kojootti coyotee = new Kojootti(Sukupuoli.UROS, "Coyotee");
         vihavainen.nouseRatsaille(coyotee);
         Kaarme kobra = new Kaarme(Sukupuoli.NAARAS, "Muerte");
-        
         kobra.pure(vihavainen);
     }
 }

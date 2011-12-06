@@ -79,14 +79,12 @@ public abstract class Ihminen extends Elain implements Ryostettava {
         return maara;
     }
     /**
-     * YrittŠŠ ryšstŠŠ kohteeksi annetun ryšstetŠvŠn.
+     * YrittŠŠ ryšstŠŠ kohteeksi annetun ryšstettŠvŠn. TŠssŠ metodissa olisi hyvŠ pŠivŠttŠŠ tŠmŠn (this) kultamŠŠrŠ
      * @param kohde Ryostettava rajapinnan toteuttava kohde
-     * @return double: Ryšstetty kultamŠŠrŠ. Toteutus jŠŠ riippumaan RyšstettŠvŠn ryosta(Ihminen ryostaja) metodista
      */
-    public double teeRyosto(Ryostettava kohde) {
+    public void teeRyosto(Ryostettava kohde) {
         double maara = kohde.ryosta(this);
         this.kulta += maara;
-        return maara;
     }
     /**
      * Ihmisen useista aseista valitaan paras
