@@ -13,14 +13,15 @@ public class CowboyCoodaus {
     /** Main metodista kaikki jo varmaan tietävät. Täydentäkää tähän toki itse jotain hienoa!
      * @param args the command line arguments
      */
-    public static void main(String[] args) throws EiRatsastajaaException {
+    
+public static void main(String[] args) throws EiRatsastajaaException {
         Hevonen heppa = new Hevonen(Sukupuoli.UROS, "Heppa");
         heppa.otaRatsaille(new Meksikaani(Sukupuoli.UROS, "Macho", "Luukkandez", new Rooli("Yliopistonlehtori")));
         Alue eka = new Alue();
         Alue toka = new Alue();
         try {
             System.out.println(heppa.getRatsastaja());
-            heppa.getRatsastaja().annaAse(new Ase("Pistooli", 15));
+            heppa.getRatsastaja().annaAse(new Ase("Test Driven Development", 15));
             heppa.getRatsastaja().setAlue(eka);
             heppa.setAlue(eka);
             heppa.liiku(toka);
@@ -28,8 +29,8 @@ public class CowboyCoodaus {
             System.out.println("Ei ratsastajaa!");
         }
         Pankki pankki = new Pankki(100, 20, 20, 20);
-        Meksikaani vartija = new Meksikaani(Sukupuoli.UROS, "Thug", "Bodyguardson", new Rooli("Vartija"));
-        vartija.annaAse(new Ase("Puunuija", 3));
+        Meksikaani vartija = new Meksikaani(Sukupuoli.UROS, "Arriva", "Vihavandez", new Rooli("Padawan"));
+        vartija.annaAse(new Ase("Vesiputousmalli", 3));
         pankki.lisaaVartija(vartija);
         heppa.getRatsastaja().teeRyosto(pankki);
         System.out.println(heppa.getRatsastaja());

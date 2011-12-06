@@ -10,4 +10,13 @@ package cowboycoodaus;
  */
 public enum Sukupuoli {
     UROS, NAARAS;
+    /**
+     * Palauttaa Sukupuolen suoraan stringinä
+     * @return Muotoa Uros, Naaras
+     */
+    public String toString() {
+        String string = super.toString();
+        string = string.charAt(0) + string.substring(1).toLowerCase();
+        return string;
+    }
 }
