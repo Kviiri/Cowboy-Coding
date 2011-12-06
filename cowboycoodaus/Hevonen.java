@@ -63,12 +63,5 @@ public class Hevonen extends Elain implements Ratsastettava {
         } else {
             super.liiku(alue);
         }
-        try {
-            System.out.println("Liikkuu...");
-            Thread.sleep(1000 * 60 / super.getNopeus());
-            System.out.println("Perillä.");
-        } catch (InterruptedException ex) {
-            Logger.getLogger(Hevonen.class.getName()).log(Level.SEVERE, null, ex);
-        }
     }
 }

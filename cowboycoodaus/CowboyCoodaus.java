@@ -28,11 +28,16 @@ public static void main(String[] args) throws EiRatsastajaaException {
         } catch (EiRatsastajaaException e) {
             System.out.println("Ei ratsastajaa!");
         }
-        Pankki pankki = new Pankki(100, 20, 20, 20);
-        Meksikaani vartija = new Meksikaani(Sukupuoli.UROS, "Arriva", "Vihavandez", new Rooli("Padawan"));
-        vartija.annaAse(new Ase("Vesiputousmalli", 3));
-        pankki.lisaaVartija(vartija);
+        Pankki pankki = new Pankki(500, 20, 20, 20);
+        Meksikaani vihavainen = new Meksikaani(Sukupuoli.UROS, "Arriva", "Vihavandez", new Rooli("Padawan"));
+        vihavainen.annaAse(new Ase("Vesiputousmalli", 3));
+        pankki.lisaaVartija(vihavainen);
         heppa.getRatsastaja().teeRyosto(pankki);
         System.out.println(heppa.getRatsastaja());
+        Kojootti coyotee = new Kojootti(Sukupuoli.UROS, "Coyotee");
+        vihavainen.nouseRatsaille(coyotee);
+        Kaarme kobra = new Kaarme(Sukupuoli.NAARAS, "Muerte");
+        
+        kobra.pure(vihavainen);
     }
 }

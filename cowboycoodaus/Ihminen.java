@@ -59,10 +59,10 @@ public abstract class Ihminen extends Elain implements Ryostettava {
     }
     /**
      * Ihminen nousee ratsaille
-     * @param hevonen Hevonen, jonka ratsaille ihminen nousee
+     * @param ratsastettava Ratsastettava, jonka ratsaille ihminen nousee
      */
-    public void nouseRatsaille(Hevonen hevonen) {
-        hevonen.otaRatsaille(this);
+    public void nouseRatsaille(Ratsastettava ratsastettava) {
+        ratsastettava.otaRatsaille(this);
     }
     /**
      * Parametrina annettu Ihminen ryšstŠŠ tŠmŠn (this) ihmisen. Ryšstšn onnistuminen riippuu ihmisten aseiden tehosta.
