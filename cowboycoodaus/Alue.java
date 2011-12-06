@@ -7,7 +7,7 @@ package cowboycoodaus;
 import java.util.ArrayList;
 
 /**
- * SisŠltŠŠ elŠimiŠ, rakennuksia ja muita sisŠltŠviŠ
+ * Sisï¿½ltï¿½ï¿½ elï¿½imiï¿½, rakennuksia ja muita sisï¿½ltï¿½viï¿½
  * @author tonykovanen, kviiri
  */
 
@@ -16,27 +16,27 @@ import java.util.ArrayList;
  * 
  */
 public class Alue extends IhmisSailio {
-    ArrayList<Elain> elaimet = new ArrayList<Elain>();
-    ArrayList<IhmisSailio> sisaltavat = new ArrayList<IhmisSailio>(); 
-    ArrayList<Rakennus> rakennukset = new ArrayList<Rakennus>(); 
+    private ArrayList<Elain> elaimet = new ArrayList<Elain>();
+    private ArrayList<IhmisSailio> sisaltavat = new ArrayList<IhmisSailio>(); 
+    private ArrayList<Rakennus> rakennukset = new ArrayList<Rakennus>(); 
     /**
-     * LisŠŠ alueelle rakennuksen
-     * @param rakennus lisŠttŠvŠ rakennus
+     * Lisï¿½ï¿½ alueelle rakennuksen
+     * @param rakennus lisï¿½ttï¿½vï¿½ rakennus
      */
     public void lisaaRakennus(Rakennus rakennus) {
         rakennukset.add(rakennus);
     } 
     /**
-     * LisŠŠ elŠimen alueelle
-     * @param elain lisŠttŠvŠ elŠin
+     * Lisï¿½ï¿½ elï¿½imen alueelle
+     * @param elain lisï¿½ttï¿½vï¿½ elï¿½in
      */
     public void lisaaElain(Elain elain) {
         elain.setAlue(this);
         elaimet.add(elain);
     }
     /**
-     * LisŠŠ IhmisSailio luokan ilmentymŠn alueelle
-     * @param sisaltava lisŠttŠvŠ ilmentymŠ
+     * Lisï¿½ï¿½ IhmisSailio luokan ilmentymï¿½n alueelle
+     * @param sisaltava lisï¿½ttï¿½vï¿½ ilmentymï¿½
      */
     public void lisaaSisaltava(IhmisSailio sisaltava) {
         sisaltava.setAlue(this);
@@ -50,22 +50,22 @@ public class Alue extends IhmisSailio {
         rakennukset.remove(rakennus);
     }
     /**
-     * Poistaa elŠimen alueelta
-     * @param elain poistettava elŠin
+     * Poistaa elï¿½imen alueelta
+     * @param elain poistettava elï¿½in
      */
     public void poistaElain(Elain elain) {
         elaimet.remove(elain);
     }
     /**
-     * Poistaa IhmisSailio luokan ilmentymŠn alueelta
-     * @param sisaltava poistettava ilmentymŠ
+     * Poistaa IhmisSailio luokan ilmentymï¿½n alueelta
+     * @param sisaltava poistettava ilmentymï¿½
      */
     public void poistaSisaltava(IhmisSailio sisaltava) {
         sisaltavat.remove(sisaltava);
     }
     public String toString() {
-        return "Rakennuksia " + rakennukset.size() + "\nMuita ihmisiŠ sisŠltŠviŠ: " +
-                (sisaltavat.size() - rakennukset.size()) + "\nVapaita elŠimiŠ: " + 
+        return "Rakennuksia " + rakennukset.size() + "\nMuita ihmisiï¿½ sisï¿½ltï¿½viï¿½: " +
+                (sisaltavat.size() - rakennukset.size()) + "\nVapaita elï¿½imiï¿½: " + 
                 elaimet.size();
     }
     /**
