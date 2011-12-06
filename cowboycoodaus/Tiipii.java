@@ -7,7 +7,7 @@ package cowboycoodaus;
 public class Tiipii extends Rakennus {
     /**
      * Luo uuden tiipiin.
-     * @param sade Tiipiin pohjaympyrän s√§de. Jos sade on negatiivinen, käytetään itseisarvoa
+     * @param sade Tiipiin pohjaympyrän säde. Jos sade on negatiivinen, käytetään itseisarvoa
      * @param korkeus Tiipiin korkeus. Jos korkeus on negatiivinen, käytetään itseisarvoa
      */
     public Tiipii(double sade, double korkeus) {
@@ -37,7 +37,7 @@ public class Tiipii extends Rakennus {
 
     /**
      * Laajentaa Tiipiitä. Käytä yliluokan laajenna-metodia avuksesi. 
-     * @param sadeLaajennos Syvyyteen ja Leveyteen teht√§v√§ muutos.
+     * @param sadeLaajennos Syvyyteen ja Leveyteen tehtävä muutos.
      * @param korkeusLaajennos Korkeuteen tehtävä muutos.
      */
     public void laajenna(double sadeLaajennos, double korkeusLaajennos) {

@@ -13,7 +13,7 @@ public class Muuli extends Elain implements Ratsastettava {
      * @param sukupuoli true = uros, false = naaras
      * @param nimi Muulin nimi
      */
-    public Muuli(boolean sukupuoli, String nimi) {
+    public Muuli(Sukupuoli sukupuoli, String nimi) {
         super(sukupuoli, nimi);
     }
 

@@ -14,8 +14,8 @@ public class CowboyCoodaus {
      * @param args the command line arguments
      */
     public static void main(String[] args) throws EiRatsastajaaException {
-        Hevonen heppa = new Hevonen(true, "Heppa");
-        heppa.otaRatsaille(new Meksikaani(true, "Macho", "Luukkandez", new Rooli("Yliopistonlehtori")));
+        Hevonen heppa = new Hevonen(Sukupuoli.UROS, "Heppa");
+        heppa.otaRatsaille(new Meksikaani(Sukupuoli.UROS, "Macho", "Luukkandez", new Rooli("Yliopistonlehtori")));
         Alue eka = new Alue();
         Alue toka = new Alue();
         try {
@@ -28,7 +28,7 @@ public class CowboyCoodaus {
             System.out.println("Ei ratsastajaa!");
         }
         Pankki pankki = new Pankki(100, 20, 20, 20);
-        Meksikaani vartija = new Meksikaani(true, "Thug", "Bodyguardson", new Rooli("Vartija"));
+        Meksikaani vartija = new Meksikaani(Sukupuoli.UROS, "Thug", "Bodyguardson", new Rooli("Vartija"));
         vartija.annaAse(new Ase("Puunuija", 3));
         pankki.lisaaVartija(vartija);
         heppa.getRatsastaja().teeRyosto(pankki);

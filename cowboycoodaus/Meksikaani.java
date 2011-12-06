@@ -12,7 +12,7 @@ public class Meksikaani extends Ihminen{
      * @param sukunimi
      * @param rooli 
      */
-    public Meksikaani(boolean sukupuoli, String nimi, String sukunimi, Rooli rooli) {
+    public Meksikaani(Sukupuoli sukupuoli, String nimi, String sukunimi, Rooli rooli) {
         super(sukupuoli, nimi, sukunimi, rooli);
     }
     /**
@@ -22,8 +22,8 @@ public class Meksikaani extends Ihminen{
      * @param nimi
      * @param sukunimi 
      */
-    public Meksikaani(boolean sukupuoli, String nimi, String sukunimi) {
-        super(sukupuoli, nimi, sukunimi, new Rooli(sukupuoli ? "SeÃ±or" : "SeÃ±ora"));
+    public Meksikaani(Sukupuoli sukupuoli, String nimi, String sukunimi) {
+        super(sukupuoli, nimi, sukunimi, new Rooli(sukupuoli == Sukupuoli.UROS ? "Se–or" : "Se–ora"));
     }
     /**
      * Kiroaa.

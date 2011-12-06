@@ -10,17 +10,17 @@ package cowboycoodaus;
  * @author kviiri, tonykovanen
  */
 public abstract class Elain implements Liikkuva{
-    private boolean sukupuoli;      //true on uros, false on naaras
+    private Sukupuoli sukupuoli;      //true on uros, false on naaras
     private String nimi;
     private Alue alue;
     private int nopeus = 10;
     
     /**
      * Eläimelle annetaan sukupuoli ja nimi
-     * @param sukupuoli eläimen sukupuoli, true jos uros, false jos naaras
+     * @param sukupuoli eläimen sukupuoli, Sukupuoli.UROS tai Sukupuoli.NAARAS
      * @param nimi eläimen nimi
      */
-    public Elain(boolean sukupuoli, String nimi) {
+    public Elain(Sukupuoli sukupuoli, String nimi) {
         this.sukupuoli = sukupuoli;
         this.nimi = nimi;
     }
@@ -28,7 +28,7 @@ public abstract class Elain implements Liikkuva{
      * 
      * @return Palauttaa sukupuolen
      */
-    public boolean getSukupuoli() {
+    public Sukupuoli getSukupuoli() {
         return sukupuoli;
     }
     /**
@@ -68,7 +68,7 @@ public abstract class Elain implements Liikkuva{
      */
     @Override
     public String toString() {
-        return this.getClass().getSimpleName() + " " + nimi + ", " + (sukupuoli ? "koiras" : "naaras");
+        return this.getClass().getSimpleName() + " " + nimi + ", " + (sukupuoli == Sukupuoli.UROS ? "koiras" : "naaras");
     }
      /**
      * Eläimelle voidaan asettaa nopeus, se on vakiolta 10 km / h

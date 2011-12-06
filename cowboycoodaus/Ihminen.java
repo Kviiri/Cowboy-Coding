@@ -26,7 +26,7 @@ public abstract class Ihminen extends Elain implements Ryostettava {
      * @param sukunimi IhmisellŠ on sukupuolen ja nimen lisŠksi sukunimi
      * @param rooli IhmisellŠ on myšs rooli
      */
-    public Ihminen(boolean sukupuoli, String nimi, String sukunimi, Rooli rooli) {
+    public Ihminen(Sukupuoli sukupuoli, String nimi, String sukunimi, Rooli rooli) {
         super(sukupuoli, nimi);
         this.sukunimi = sukunimi;
         this.kulta = 0;
@@ -38,8 +38,8 @@ public abstract class Ihminen extends Elain implements Ryostettava {
      * @param nimi
      * @param sukunimi 
      */
-    public Ihminen(boolean sukupuoli, String nimi, String sukunimi) {
-        this(sukupuoli, nimi, sukunimi, new Rooli(sukupuoli ? "Herra" : "Rouva"));
+    public Ihminen(Sukupuoli sukupuoli, String nimi, String sukunimi) {
+        this(sukupuoli, nimi, sukunimi, new Rooli(sukupuoli == sukupuoli.UROS ? "Herra" : "Rouva"));
     }
     
     

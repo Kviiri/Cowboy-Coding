@@ -16,7 +16,7 @@ public class Kojootti extends Elain implements Ratsastettava {
      * @param sukupuoli
      * @param nimi 
      */
-    public Kojootti(boolean sukupuoli, String nimi) {
+    public Kojootti(Sukupuoli sukupuoli, String nimi) {
         super(sukupuoli, nimi);
     }
     /**

@@ -20,7 +20,7 @@ public class Hevonen extends Elain implements Ratsastettava {
      * @param sukupuoli
      * @param nimi 
      */
-    public Hevonen(boolean sukupuoli, String nimi) {
+    public Hevonen(Sukupuoli sukupuoli, String nimi) {
         super(sukupuoli, nimi);
     }
     /**

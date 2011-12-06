@@ -14,7 +14,7 @@ public class Kaarme extends Elain{
      * @param sukupuoli
      * @param nimi 
      */
-    public Kaarme(boolean sukupuoli, String nimi) {
+    public Kaarme(Sukupuoli sukupuoli, String nimi) {
         super(sukupuoli, nimi);
     }
     /**
